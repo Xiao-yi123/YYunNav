@@ -1,0 +1,28 @@
+{//侧边栏顶部菜单项  小窗口时的头部项目}
+<li class="sidebar-item top-menu">
+	<a href="javascript:;" class="smooth change-href">
+		<i class="iconfont icon-category icon-fw icon-lg mr-2"></i>
+		<span>站点推荐</span>
+		<i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+	</a>
+	<ul class="navbar-nav site-menu" style="margin-right: 16px;">
+		{foreach $HeaderMenu as $key=>$vo}
+		{//菜单项}
+		<li	class="menu-item {$vo->HasChildren}">
+			<a href="{$vo->url}">
+				<span>{$key}</span></a>
+			{notempty name="$vo->HasChildren"}
+			<ul class="sub-menu">
+				{foreach $vo->children as $key1=>$vo1}
+
+				<li class="menu-item">
+					<a href="{$vo1->url}">{$vo1->name}</a>
+				</li>
+				{/foreach}
+			</ul>
+			{/notempty}
+		</li>
+		{/foreach}
+	</ul>
+</li>
+

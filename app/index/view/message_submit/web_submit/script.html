@@ -1,0 +1,42 @@
+<script type='text/javascript'>
+  var current_type ='sites';
+  function currentType(file) {
+    current_type = $(file).data('type');
+  };
+  $('.custom-submit').click(function() {
+    $('#'+current_type).children('form').submit();
+  });
+
+  $('.i-tougao').submit(function() {
+      $(this).attr({
+          "disabled":'disabled',
+          "value"     :'提交中...'
+      });
+    var formData = urlParamsToJson($(this).serialize());
+    formData['type'] = $(this).data('type');
+    formData['image_captcha'] = $('#tougao-form input[name="image_captcha"]').val();
+    if(!(formData['name'] && formData['node_id'] && formData['description'] && formData['url'] && formData['image_captcha'])){
+        console.log(formData)
+      showAlert(JSON.parse('{"status":3,"msg":"对不起！您提交的数据不完整！请完善后再进行提交！"}'));
+      return false;
+    }
+
+    $.ajax({
+      url:         "/WebSubmit",
+      type:        'POST',
+      dataType:    'json',
+      data:        formData
+    }).done(function (result) {
+        showAlert(JSON.parse(`{"status":${result['code']},"msg":"${result['msg']}"}`));
+        if(result['code'] === 1)
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
+
+    }).fail(function (result) {
+      showAlert(JSON.parse('{"status":3,"msg":"网络连接错误！请刷新再试"}'));
+    });
+    return false;
+  });
+
+</script>

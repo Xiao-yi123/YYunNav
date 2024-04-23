@@ -1,0 +1,40 @@
+<div id="reduction-index">
+    <div class="layui-bg-gray" style="padding: 16px;">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-card">
+                <div class="layui-card-header">还原您的数据</div>
+                <div class="layui-card-body">
+                    <ul>
+                        <li>还原上传文件最多 8M,如文件超过 8M,请在服务器上通过覆盖进行还原</li>
+                        <li style="color:red;">还原操作时会清空数据库, 还原前请先做好备份避免数据丢失</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-tab layui-tab-brief layui-card" style="padding: 16px;">
+        <ul class="layui-tab-title">
+            <li class="layui-this">上传</li>
+            <li>从服务器上</li>
+
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <button type="button" class="layui-btn upload_file" lay-options="{
+                    accept: 'file',
+                    exts: 'zip|rar|7z'
+                  }">
+                    <i class="layui-icon layui-icon-upload"></i>
+                    上传需要还原的文件(.zip||.sql)
+                </button>
+
+            </div>
+            <div class="layui-tab-item form-server">
+                <table id="FromServerTable"></table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

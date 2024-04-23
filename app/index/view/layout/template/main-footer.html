@@ -1,0 +1,48 @@
+{//主要的页脚}
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big" style="">
+  <div class="footer-inner card rounded-xl m-0">
+    <div class="footer-text card-body text-muted text-center text-md-left">
+      <div class="row my-4">
+        <div class="col-12 col-md-4 mb-4 mb-md-0">
+          <a class="footer-logo" href="https://www.mgnav.com" title="马哥导航">
+            <img src="__STATIC_LOGO__/yiyunnavlogo.png" class="logo-light mb-3" alt="马哥导航" height="40">
+            <div class="text-sm">{:sysconfig('site','site_name')}为您提供最全面的资源导航，导航就来{:sysconfig('site','site_name')}。注意：本站仅收录网站，不对其网站内容或交易负责。若收录的站点侵害到您的利益，请联系我们删除收录</div></a>
+        </div>
+        <div class="col-12 col-md-5 mb-4 mb-md-0">
+          <p class="footer-links text-sm mb-3">
+            <a href="/Disclaimer">免责声明</a>
+            <a href="/WebSubmit">友链申请</a>
+            <a href="/WebSubmit">网站提交</a>
+          <div class="footer-social">
+            <a class="rounded-circle bg-light" href="https://api.btstu.cn/qqtalk/api.php?qq={$AdminInfo.systemUserInfo__qq|default=''}" target="_blank" data-toggle="tooltip" data-placement="top" title="" rel="external noopener nofollow" data-original-title="QQ">
+              <i class="iconfont icon-qq"></i>
+            </a>
+            <a class="rounded-circle bg-light" href="https://t.me" target="_blank" data-toggle="tooltip" data-placement="top" title="" rel="external noopener nofollow" data-original-title="Telegram">
+              <i class="iconfont icons8-Telegram"></i>
+            </a>
+            <a class="rounded-circle bg-light qr-img" href="javascript:;" data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="<img src='/static/logo/wechat.jpg' height='100' width='100'>">
+              <i class="icons8-WeChat"></i>
+            </a>
+            <a class="rounded-circle bg-light" href="mailto:{$AdminInfo.systemUserInfo__email|default=''}" target="_blank" data-toggle="tooltip" data-placement="top" title="" rel="external noopener nofollow" data-original-title="Email">
+              <i class="icons8-mail"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 text-md-right mb-4 mb-md-0">
+          <div class="footer-mini-img" data-toggle="tooltip" title="" data-original-title="扫码添加站长微信">
+            <p class="bg-light rounded-lg p-1">
+              <img class=" " src="/static/logo/wechat.jpg" alt="扫码添加站长微信"></p>
+            <span class="text-muted text-ss mt-2">扫码添加站长微信</span></div>
+          <div class="footer-mini-img" data-toggle="tooltip" title="" data-original-title="扫码加QQ群">
+            <p class="bg-light rounded-lg p-1">
+              <img class=" " src="/static/logo/QQGroup.jpg" alt="扫码加QQ群"></p>
+            <span class="text-muted text-ss mt-2">扫码加QQ群</span></div>
+        </div>
+      </div>
+      <div class="footer-copyright text-xs">Copyright © 2024
+        <a href="/" title="{:sysconfig('site','site_name')}" class="" rel="home">{:sysconfig('site','site_name')}</a>&nbsp;
+        <a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">{:sysconfig('site','site_beian')}</a>
+      </div>
+    </div>
+  </div>
+</div>

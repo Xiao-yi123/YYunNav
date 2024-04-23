@@ -1,0 +1,58 @@
+<div id="content" class="container my-4 my-md-5">
+    {include file="message_submit/panel-card"}
+
+    <div id="tougao-form" class="tougao-form">
+        <h1 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+            <i class="iconfont {$distinguish.icon} mr-2"></i>
+            {$distinguish.iconContent}
+        </h1>
+        <div class="panel panel-tougao card">
+            <div class="card-body">
+                {if $distinguish['source'] == 'message'}
+                    {include file="message_submit/message/form"}
+                    {include file="message_submit/message/comment-list"}
+
+                    {include file="message_submit/message/script"}
+
+                {elseif $distinguish['source'] == 'submit' /}
+                <div class="tab-content">
+                    {include file="message_submit/web_submit/tab-pane/sites"}
+                    <div class="row row-sm mb-4">
+                        <div class="image-captcha-group">
+                            <input type="text" size="6" name="image_captcha" class="form-control" placeholder="图形验证码" autocomplete="off">
+                            <span class="image-captcha" data-id="io_submit_link" data-toggle="tooltip" title="" data-original-title="点击刷新">
+                                <img alt="img code" src="{:captcha_src()}" onclick="this.src = '<?php echo captcha_src(); ?>?t=' + new Date().getTime();">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row row-sm mb-4">
+                        <div class="col-12 col-md-3 my-2">
+                            <button class="btn btn-danger custom_btn-d text-sm col-12 custom-submit">提交</button>
+                        </div>
+                    </div>
+                </div>
+                {include file="message_submit/web_submit/script"}
+                {else /}
+                {/if}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function (){
+        $('a[class*="smooth"]').attr('href', function(index, oldHref) {
+            return "/"+oldHref;
+        });
+    });
+    $('a[class*="smooth"]').click(function () {
+        window.location.href = $(this).attr("href")
+    })
+</script>
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<div id="link-other">
+	<div class="layui-tab layui-tab-brief layui-card" style="padding: 16px;">
+		<ul class="layui-tab-title">
+			<li class="layui-this">链接图片</li>
+			<li>操作</li>
+
+		</ul>
+		<div class="layui-tab-content">
+			<div id="link_image" class="layui-tab-item layui-show">
+				<div class="layui-field-box" >
+					<div class="layui-btn-container">
+						<fieldset class="layui-elem-field get-all">
+							<legend>获取所有</legend>
+							<div class="layui-field-box">
+								<div class="layui-btn-container">
+									<button type="button" class="layui-btn" data-interface="random">使用随机接口获取</button>
+									<button type="button" class="layui-btn" data-interface="uomg">使用Uomg接口获取</button>
+									<button type="button" class="layui-btn" data-interface="Iowen">使用Iowen接口获取</button>
+									<button type="button" class="layui-btn" data-interface="Btstu">使用Btstu接口获取</button>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="layui-elem-field get-selected">
+							<legend>获取选中链接</legend>
+							<div class="layui-field-box">
+								<div class="layui-btn-container">
+									<button type="button" class="layui-btn" data-interface="random">使用随机接口获取</button>
+									<button type="button" class="layui-btn" data-interface="uomg">使用Uomg接口获取</button>
+									<button type="button" class="layui-btn" data-interface="Iowen">使用Iowen接口获取</button>
+									<button type="button" class="layui-btn" data-interface="Btstu">使用Btstu接口获取</button>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="layui-elem-field get-not">
+							<legend>获取没有图片链接</legend>
+							<div class="layui-field-box">
+								<div class="layui-btn-container">
+									<button type="button" class="layui-btn" data-interface="random">使用随机接口获取</button>
+									<button type="button" class="layui-btn" data-interface="uomg">使用Uomg接口获取</button>
+									<button type="button" class="layui-btn" data-interface="Iowen">使用Iowen接口获取</button>
+									<button type="button" class="layui-btn" data-interface="Btstu">使用Btstu接口获取</button>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="layui-elem-field examine_image">
+							<legend>检查图片</legend>
+							<div class="layui-field-box">
+								<div class="layui-btn-container">
+									<button type="button" class="layui-btn" data-interface="sql">检查数据库</button>
+									<button type="button" class="layui-btn" data-interface="file">检查文件</button>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+
+			</div>
+			<div id="operate" class="layui-tab-item">
+				<form id="other-operate-form" class="layui-form layuimini-form">
+					<div class="layui-form-item">
+						<label class="layui-form-label">归属节点</label>
+						<div class="layui-input-block">
+							<select name="node_id" lay-verify="required" lay-filter="node_id">
+								{foreach $pidMenuList as $vo}
+								<option value="{$vo.id}">{$vo.name}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+
+					<div class="hr-line"></div>
+					<div class="layui-form-item text-center">
+						<button type="button" class="layui-btn layui-btn-normal layui-btn-sm" data-method="submit">确认</button>
+						<button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>
+

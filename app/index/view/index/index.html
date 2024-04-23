@@ -1,0 +1,93 @@
+<div id="content" class="content-site customize-site">
+    {foreach $ContentLink as $OneLinkVo}
+    <div class="d-flex flex-fill ">
+        {//标题}
+        <h4 class="text-gray text-lg mb-4">
+            <i class="site-tag iconfont icon-tag icon-lg mr-1" id="term-{$OneLinkVo.id}"></i>
+            {$OneLinkVo.name}
+        </h4>
+
+    </div>
+
+    {notempty name='$OneLinkVo.two_data'}
+    <div class="d-flex flex-fill flex-tab">
+        <div class="d-flex slider-menu-father">
+            <div class='overflow-x-auto slider_menu mini_tab ajax-list-home' slidertab="sliderTab" data-id="{$OneLinkVo.id}">
+
+                <ul class="nav nav-pills menu" role="tablist">
+                    {foreach $OneLinkVo.two_data as $key=>$TwoNode}
+                    {//选项卡列表}
+                    <li class="pagenumber nav-item">
+                        <a id="term-{$TwoNode.id}" class="nav-link {if $key==0}active{/if}" data-action="load_home_tab" data-taxonomy="favorites" data-id="{$TwoNode.id}">{$TwoNode.name}</a>
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {/notempty}
+
+    <div class="ajax-{$OneLinkVo.id} mt-4" style="position: relative;">
+
+    {empty name='$OneLinkVo.link_data'}
+    <div class="tab-pane active">
+        <div class="row io-mx-n2 mt-4 ajax-list-body position-relative">
+            <div class="col-lg-12 customize_nothing">
+                <div class="nothing mb-4">无数据</div>
+            </div>
+        </div>
+    </div>
+
+    {else/}
+        <div class="row">
+            {switch $OneLinkVo.display_type }
+            {case 1 }
+                {foreach $OneLinkVo.link_data as $LinkDataVo}
+                    {include file="index/component/card/default-card"/}
+                {/foreach}
+            {/case}
+            {case 2}
+                {foreach $OneLinkVo.link_data as $LinkDataVo}
+                    {include file="index/component/card/mini-card"/}
+                {/foreach}
+                {/case}
+            {case 3}
+                {foreach $OneLinkVo.link_data as $LinkDataVo}
+                    {include file="index/component/card/book-card"/}
+                {/foreach}
+            {/case}
+            {case 4}
+                {foreach $OneLinkVo.link_data as $LinkDataVo}
+                    {include file="index/component/card/app-card"/}
+                {/foreach}
+            {/case}
+            {default /}
+            {/switch}
+        </div>
+    {/empty}
+    </div>
+
+    {/foreach}
+
+
+
+    <h4 class="text-gray text-lg mb-4">
+        <i class="iconfont icon-book-mark-line icon-lg mr-2" id="friendlink"></i>友情链接
+    </h4>
+    <div class="friendlink text-xs card">
+        <div class="card-body">
+            {//友情链接}
+            {volist  name='friendlink' id='vo'}
+            <a href="{$vo->href}" title="{$vo->description}" target="_blank">{$vo->name}</a>
+            {/volist}
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    $('ul[role="tablist"]').find('li:eq(0)').click();
+    console.log($('ul[role="tablist"]').find('li:eq(0)').text())
+    $('ul.nav-pills').find('li:eq(1)').click();
+</script>

@@ -1,0 +1,24 @@
+{//侧边栏内容项}
+<li class="sidebar-item">
+	<a href="#term-{$vo.id}" class="smooth change-href" data-change="#term-{$vo.id}">
+		<i class="iconfont icon-lg mr-2 {$vo.icon|raw}">
+		</i>
+		<span>{$vo.name}</span>
+		{notempty  name="vo.two_data"}
+		<i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+		{/notempty}
+	</a>
+	{notempty  name="vo.two_data"}
+	<ul>
+		{foreach $vo.two_data as $key1=>$vo1}
+		<li>
+			<a href="#term-{$vo1.id}" class="smooth">
+				<span>{$vo1.name}</span>
+			</a>
+		</li>
+
+		{/foreach}
+
+	</ul>
+	{/notempty}
+</li>

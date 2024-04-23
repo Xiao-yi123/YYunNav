@@ -1,0 +1,23 @@
+{//评论列表}
+<ul class="comment-list" id="comment-list">
+  {foreach $NavComment as $CommentItem }
+
+
+    <li class="comment even thread-even depth-1 comment">
+        {include file="message_submit/message/comment"}
+
+        {present name="CommentItem['twoComment']"}
+        <ul class="children">
+            {foreach $CommentItem.twoComment as $CommentItem }
+            <li class="comment byuser bypostauthor odd alt depth-2 comment">
+                {include file="message_submit/message/comment"}
+            </li>
+            {/foreach}
+
+        </ul>
+        {/present}
+        <!-- .children -->
+    </li>
+    <!-- #comment-## -->
+    {/foreach}
+</ul>

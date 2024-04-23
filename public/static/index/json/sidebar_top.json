@@ -1,0 +1,14 @@
+{
+    "联系站长": {
+        "href": "https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=3479097030@qq.com",
+        "icon": "icons8-QQ"
+    },
+    "留言版": {
+        "href": "/Message",
+        "icon": "icons8-留言"
+    },
+    "网站提交": {
+        "href": "/WebSubmit",
+        "icon": "icons8-提交"
+    }
+}

@@ -1,0 +1,71 @@
+<div id="content" class="container user-area my-4">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-lg pb-3 border-bottom border-light border-2w mb-3">
+                基本信息
+            </div>
+            <div class="row">
+                <div class="col-sm-6 p-2">
+                    <ul class="list-inline list-author-data">
+                        <li class="author-set-left text-muted">
+                            昵称
+                        </li>
+                        <li class="author-set-right ">
+                            {$AdminInfo['systemUserInfo__nickname']}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 p-2">
+                    <ul class="list-inline list-author-data">
+                        <li class="author-set-left text-muted">
+                            签名
+                        </li>
+                        <li class="author-set-right ">
+                            {$AdminInfo['systemUserInfo__sign']||default="这个人很懒，什么都没留下"}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 p-2">
+                    <ul class="list-inline list-author-data">
+                        <li class="author-set-left text-muted">
+                            注册时间
+                        </li>
+                        <li class="author-set-right ">
+                            {$AdminInfo['create_time']}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 p-2">
+                    <ul class="list-inline list-author-data">
+                        <li class="author-set-left text-muted">
+                            微信
+                        </li>
+                        <li class="author-set-right ">
+                            {$AdminInfo['systemUserInfo__wechat']|default="用户未公开"}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 p-2">
+                    <ul class="list-inline list-author-data">
+                        <li class="author-set-left text-muted">
+                            邮箱
+                        </li>
+                        <li class="author-set-right ">
+                            {$AdminInfo['systemUserInfo__email']|default="用户未公开"}
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 p-2">
+                    <ul class="list-inline list-author-data">
+                        <li class="author-set-left text-muted">
+                            个人网站
+                        </li>
+                        <li class="author-set-right ">
+                            {$AdminInfo['systemUserInfo__web']|default="用户未公开"}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

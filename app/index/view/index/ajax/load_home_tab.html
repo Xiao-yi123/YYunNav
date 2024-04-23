@@ -1,0 +1,36 @@
+{empty name='$CurrentLinkCard'}
+<div class="tab-pane active  mt-4">
+    <div class="row io-mx-n2 mt-4 ajax-list-body position-relative">
+        <div class="col-lg-12 customize_nothing">
+            <div class="nothing mb-4">无数据</div>
+        </div>
+    </div>
+</div>
+
+{else/}
+<div class="row">
+{switch $display_type }
+{case 1 }
+    {foreach $CurrentLinkCard as $LinkDataVo}
+        {include file="index/component/card/default-card"/}
+    {/foreach}
+{/case}
+{case 2}
+    {foreach $CurrentLinkCard as $LinkDataVo}
+        {include file="index/component/card/mini-card"/}
+    {/foreach}
+{/case}
+{case 3}
+    {foreach $CurrentLinkCard as $LinkDataVo}
+        {include file="index/component/card/book-card"/}
+    {/foreach}
+{/case}
+{case 4}
+    {foreach $CurrentLinkCard as $LinkDataVo}
+        {include file="index/component/card/app-card"/}
+    {/foreach}
+{/case}
+{default /}
+{/switch}
+</div>
+{/empty}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{:sysconfig('site','site_name')}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            height: 100%
+        }
+
+        #loading {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #e8eaec
+        }
+
+        .io-black-mode #loading {
+            background: #1b1d1f
+        }
+
+        .loading-content {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 0 12px;
+            box-sizing: border-box;
+            z-index: 10000000
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .flex-center {
+            align-items: center
+        }
+
+        .flex-end {
+            display: flex;
+            justify-content: flex-end
+        }
+
+        .flex-fill {
+            -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important
+        }
+
+        .logo-img {
+            text-align: center
+        }
+
+        .logo-img img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px
+        }
+
+        .loading-info {
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 15px 20px rgba(18,19,20,.2)
+        }
+
+        .loading-tip {
+            background: rgba(255,158,77,.1);
+            border-radius: 6px;
+            padding: 5px
+        }
+
+        .loading-text {
+            color: #b22e12;
+            font-weight: bold
+        }
+
+        .loading-topic {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(136,136,136,.2);
+            margin-bottom: 20px;
+            font-size: 12px;
+            word-break: break-all
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .loading-btn,.loading-btn:active,.loading-btn:visited {
+            color: #fc5531;
+            border-radius: 5px;
+            border: 1px solid #fc5531;
+            padding: 5px 20px;
+            transition: .3s
+        }
+
+        .loading-btn:hover {
+            color: #fff;
+            background: #fc5531;
+            box-shadow: 0 15px 15px -10px rgba(184,56,25,0.8)
+        }
+
+        .loading-url {
+            color: #fc5531
+        }
+
+        .taxt-auto {
+            color: #787a7d;
+            font-size: 14px
+        }
+
+        .auto-second {
+            color: #fc5531;
+            font-size: 16px;
+            margin-right: 5px;
+            font-weight: bold
+        }
+
+        .safe-tip {
+            max-width: 580px;
+            margin: 10% auto 50px auto;
+        }
+
+        .warning-ico {
+            width: 30px;
+            height: 26px;
+            margin-right: 5px;
+            background-image: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M872.7 582.6L635.2 177c-53.5-91.3-186.6-88.1-235.6 5.7L187.7 588.3c-46.8 89.7 18.2 197 119.4 197h449.4c104 0 168.8-112.9 116.2-202.7zM496.6 295.2c0-20.5 11.7-31.5 35.1-32.9 22 1.5 33.7 12.5 35.1 32.9V315l-26.4 267.9h-13.2L496.6 315v-19.8zm35.2 406.3c-22-1.5-34.4-13.2-37.3-35.1 1.4-19 13.2-29.3 35.1-30.7 23.4 1.5 36.6 11.7 39.5 30.7-1.5 21.9-13.9 33.6-37.3 35.1z' fill='%23f55d49'/%3E%3C/svg%3E")
+        }
+
+        .io-black-mode .loading-info {
+            color: #eee;
+            background: #2b2d2f
+        }
+
+        .io-black-mode .loading-text {
+            color: #ff8369
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media (min-width:768px) {
+            .loading-content {
+                min-width: 450px
+            }
+        }
+    </style>
+</head>
+    <div class="loader JS_on">
+        <span class="binary"></span>
+        <span class="binary"></span>
+<!--        <span class="getting-there">LOADING STUFF...</span>-->
+    </div></div>
+    <div class="loading-content">
+        <div class="safe-tip">
+            <div class="logo-img">
+                <img id="img_logo" src="__STATIC__/logo/yiyunnavlogo.png" alt="{:sysconfig('site','site_name')}">
+            </div>
+            <div class="loading-info">
+                <div class="flex flex-center loading-tip">
+                    <div class="warning-ico"></div><div class="loading-text">请注意您的账号和财产安全</div>
+                </div>
+                <div class="loading-topic">
+                    您即将离开{:sysconfig('site','site_name')}，去往：<span class="loading-url">{$url}</span>
+                </div>
+                <div class="flex flex-center">
+                    <div class="taxt-auto"><span id="time" class="auto-second">3</span>秒后自动跳转</div>
+                    <script type="text/javascript">
+                        delayURL();
+                        function delayURL() {
+                            var delay = document.getElementById("time").innerHTML;
+                            var t = setTimeout("delayURL()", 1000);
+                            if (delay > 0) {
+                                delay--;
+                                document.getElementById("time").innerHTML = delay;
+                            } else {
+                                clearTimeout(t);
+                                window.location.href = "{$url}";
+                            }
+                        }
+                    </script>
+
+                    <div class="flex-fill"></div>
+                    <a class="loading-btn" href="{$url}" rel="external nofollow">继续</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if(document.documentElement.classList.contains('io-black-mode')){
+            document.getElementById('img_logo').src='{$url}';
+        }
+        //延时30S关闭跳转页面，用于文件下载后不会关闭跳转页的问题
+        setTimeout(function() {
+            window.opener = null;
+            window.close();
+        }, 30000);
+    </script>
+
+    </body>
+</html>

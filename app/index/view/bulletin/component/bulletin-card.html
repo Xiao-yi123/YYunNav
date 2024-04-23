@@ -1,0 +1,23 @@
+{//公告卡片}
+<article class="card bulletin-card mb-3">
+  <div class="card-body py-3 px-3 px-md-4 d-flex flex-fill text-muted">
+    <div>
+      <i class="iconfont icon-instructions">
+      </i>
+    </div>
+    <div class="bulletin-swiper mx-1 mx-md-2">
+      <p class="scrolltext-title overflowClip_1">
+        <a href="/Bulletin/?id={$vo.id}" rel="bulletin">
+          {$vo.title}
+        </a>
+      </p>
+    </div>
+    <div class="flex-fill">
+    </div>
+    <div class="text-muted text-xs" style="white-space:nowrap;line-height:1.5625rem">
+      <i class="iconfont icon-time mr-2">
+      </i>
+      {$vo.time}
+    </div>
+  </div>
+</article>

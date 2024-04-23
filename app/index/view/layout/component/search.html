@@ -1,0 +1,35 @@
+{//搜索项}
+<div id="search-list-menu" class="hide-type-list">
+  <div class="s-type text-center">
+    <div class="s-type-list big">
+      <div class="anchor" style="position: absolute; left: 50%; opacity: 0;"></div>
+
+      {foreach $SearchData as $key=>$vo}
+      <label for="type-{$vo[0]->e_name}" class="">
+        <span>{$key}</span>
+      </label>
+      {/foreach}
+    </div>
+  </div>
+</div>
+<form action="https://nav.iowen.cn?s=" method="get" target="_blank" class="super-search-fm">
+  <input type="text" id="search-text" class="form-control smart-tips search-key" placeholder="输入关键字搜索" style="outline:0" autocomplete="off" />
+  <button type="submit"><i class="iconfont icon-search"></i></button>
+</form>
+<div id="search-list" class="hide-type-list">
+  {foreach $SearchData as $key=>$vo}
+  <div class="search-group">
+    <ul class="search-type">
+
+      {for start="0" end='count($vo)'}
+      <li>
+        <input checked="checked" hidden="" type="radio" name="type" id="type-{$vo[$i]->e_name}" value="{$vo[$i]->link}" data-placeholder="{$vo[$i]->placeholder}" for="type-{$vo[$i]->name}">
+        <label for="type-{$vo[$i]->e_name}">
+          <span class="text-muted">{$vo[$i]->name}</span>
+        </label>
+      </li>
+      {/for}
+    </ul>
+  </div>
+  {/foreach}
+</div>

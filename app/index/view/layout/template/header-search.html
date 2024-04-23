@@ -1,0 +1,16 @@
+{//头部的搜索布局}
+{if $IsSSearch}
+<div class="s-search">
+  <div id="search" class="s-search mx-auto">
+    {include file="layout/component/search"/}
+    <div class="card search-smart-tips" style="display: none">
+      <ul></ul>
+    </div>
+  </div>
+</div>
+{notempty  name="Bulletin"}
+<div class="bulletin-big mx-3 mx-md-0">
+  {include file="layout/component/bulletin_box"/}
+</div>
+{/notempty}
+{/if}

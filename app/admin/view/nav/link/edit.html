@@ -1,0 +1,72 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类</label>
+            <div class="layui-input-block">
+                <select name="node_id" lay-verify="required" lay-filter="node_id">
+                    {foreach $pidMenuList as $vo}
+                    <option value="{$vo.id}" data-type="{$vo.display_type|default=0}" {if $row.node_id==$vo.id}selected=""{/if}>{$vo.name}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">资源名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" class="layui-input" lay-verify="required" placeholder="请输入资源名" value="{$row.name|raw|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">URL</label>
+            <div class="layui-input-block">
+                <input type="text" name="url" class="layui-input" lay-verify="required|url" placeholder="请输入URL" value="{$row.url|raw|default=''}">
+
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label required">资源图片</label>
+            <div class="layui-input-block layuimini-upload">
+                <input name="image_path" class="layui-input layui-col-xs6" disabled lay-reqtext="选择吧" placeholder="选择吧" value="{$row.image_path|default=''}">
+                <div class="layuimini-upload-btn">
+                    <span><a class="layui-btn layui-btn-normal" data-name="update-image" ><i class="fa fa-list"></i> 更新图片</a></span>
+                </div>
+                <ul id="bing-image_path" class="layuimini-upload-show">
+                    <li>
+                        <img src="{$row.image_path|default=''}" data-name="update-image" onerror="this.src='http://127.0.0.1:8081/static/admin/images/upload-icons/file.png';this.onerror=null">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text" name="image_base64">
+            <label class="layui-form-label">资源图片Base64</label>
+            <div class="layui-input-block">
+                <textarea name="image_base64" rows="5" class="layui-textarea" placeholder="请输入资源图片的 Base64 数据"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">资源描述</label>
+            <div class="layui-input-block">
+                <textarea name="description" rows="5" class="layui-textarea" placeholder="请输入资源描述">{$row.description|raw|default=''}</textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                <select name="status" lay-verify="required">
+                    <option value=''></option>
+                    {foreach $getStatusList as $k=>$v}
+                    <option value='{$k}' {in name="k" value="$row.status"}selected=""{/in}>{$v}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

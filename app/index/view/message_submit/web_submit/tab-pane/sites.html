@@ -1,0 +1,50 @@
+{//选项卡窗格  公众号}
+<div id="sites" class="tab-pane active">
+  <form class="i-tougao" method="post" data-type="sites" action="">
+    <input type="hidden" class="form-control" value="sites" name="type">
+
+    <div class="row row-sm">
+      <div class="col-sm-6 my-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="iconfont icon-name icon-fw" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" value="" name="name" placeholder="网站名称 *" maxlength="30">
+        </div>
+
+      </div>
+      <div class="col-sm-6 my-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="iconfont icon-url icon-fw" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" value="" name="url" placeholder="网站链接 *">
+        </div>
+      </div>
+      <div class="col-sm-6 my-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="iconfont icon-category icon-fw" aria-hidden="true"></i></span>
+          </div>
+          <select name="node_id" class="form-control">
+            <option value="0" selected="selected">选择分类 *</option>
+            {foreach $choose as $OneNavKey=>$OneNavVo}
+              <option class="level-0" value="{$OneNavVo.id}">{$OneNavVo.name}</option>
+              {notempty name="$OneNavVo.two_data"}
+                {foreach $OneNavVo.two_data as $TwoNavKey=>$TwoNavVo}
+                <option class="level-1" value="{$TwoNavVo.id}">&nbsp;&nbsp;&nbsp;{$TwoNavVo.name}</option>
+                {/foreach}
+              {/notempty}
+            {/foreach}
+
+          </select>
+        </div>
+      </div>
+
+      <div class="col-12 my-2">
+        <label style="vertical-align:top" for="content">网站描叙:</label>
+        <textarea class="form-control text-sm" rows="6" cols="55" name="description"></textarea>
+      </div>
+    </div>
+  </form>
+</div>

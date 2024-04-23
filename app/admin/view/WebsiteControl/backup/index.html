@@ -1,0 +1,33 @@
+<div id="backup-index">
+
+    <div class="layui-bg-gray" style="padding: 16px;">
+        <div class="layui-row layui-col-space15">
+                <div class="layui-card">
+                    <div class="layui-card-header">备份您的数据</div>
+                    <div class="layui-card-body">
+                        <ul>
+                            <li>此备份操作仅包含内容数据, 并不会涉及任何设置信息</li>
+                            <li>如果您的数据量过大, 为了避免操作超时, 建议您直接使用数据库提供的备份工具备份数据</li>
+                            <li>为了缩小备份文件体积, 建议您在备份前删除不必要的数据</li>
+                            <li>备份只会备份到服务器, 如需下载请到"还原"处进行下载</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="layui-bg-gray start-backup" style="padding: 16px;">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-card">
+                <div class="layui-card-header">开始备份>></div>
+                <div class="layui-card-body">
+                    <button type="button" class="layui-btn" data-method="project">备份整个项目</button>
+                    <button type="button" class="layui-btn" data-method="fullsql">完全备份数据库</button>
+                    <button type="button" class="layui-btn" data-method="configsql">备份配置项目</button>
+                    <button type="button" class="layui-btn" data-method="contentsql">备份数据库内容</button>
+                    <button type="button" class="layui-btn" data-method="structuresql">备份数据库结构</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

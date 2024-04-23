@@ -1,0 +1,88 @@
+{//大标题横幅}
+<div class="big-header-banner">
+  <div id="header" class="page-header sticky">
+    <div class="navbar navbar-expand-md">
+      <div class="container-fluid p-0">
+
+        {//小页面时的logo}
+        <a href="/" class="navbar-brand d-md-none" title="{:sysconfig('site','site_name')}">
+          <img src="__STATIC_LOGO__/yiyunnavlogo.png" class="logo-light"
+               alt="{:sysconfig('site','site_name')}">
+          <img src="__STATIC_LOGO__/yiyunlogo.png" class="logo-dark d-none"
+               alt="{:sysconfig('site','site_name')}">
+        </a>
+
+        <div class="collapse navbar-collapse order-2 order-md-1">
+
+          {//标头迷你按钮}
+          <div class="header-mini-btn">
+            <label>
+              <input id="mini-button" type="checkbox">
+              <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                <path class="line--2" d="M0 50h80"></path>
+                <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+              </svg>
+            </label>
+
+          </div>
+          <ul class="navbar-nav site-menu" style="margin-right: 16px;">
+            {foreach $HeaderMenu as $key=>$vo}
+              {//菜单项}
+              <li	class="menu-item {$vo->HasChildren}">
+                <a href="{$vo->url}">
+                  <span>{$key}</span></a>
+                {notempty name="$vo->HasChildren"}
+                <ul class="sub-menu">
+                  {foreach $vo->children as $key1=>$vo1}
+
+                  <li class="menu-item">
+                    <a href="{$vo1->url}">{$vo1->name}</a>
+                  </li>
+                  {/foreach}
+                </ul>
+                {/notempty}
+              </li>
+            {/foreach}
+          </ul>
+          {//天气设置}
+          <div class="rounded-circle weather">
+            <div id="he-plugin-simple" style="display: contents;"></div>
+            <script>WIDGET = { CONFIG: { "modules": "12034", "background": 5, "tmpColor": "888", "tmpSize": 14, "cityColor": "888", "citySize": 14, "aqiSize": 14, "weatherIconSize": 24, "alertIconSize": 18, "padding": "10px 10px 10px 10px", "shadow": "1", "language": "auto", "borderRadius": 5, "fixed": "false", "vertical": "middle", "horizontal": "left", "key": "a922adf8928b4ac1ae7a31ae7375e191" } }</script>
+            <script src="//widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+          </div>
+        </div>
+
+        <ul class="nav navbar-menu text-xs order-1 order-md-2">
+
+          {//一言}
+          <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
+            <script>
+              fetch('https://v1.hitokoto.cn')
+                      .then(response => response.json())
+                      .then(data => {
+                        const hitokoto = document.getElementById('hitokoto_text')
+                        hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                        hitokoto.innerText = data.hitokoto
+                      })
+                      .catch(console.error)
+            </script>
+            <div id="hitokoto"><a href="#" target="_blank" id="hitokoto_text">我爱你，洛千婷</a></div>
+          </li>
+          {//搜索}
+          <li class="nav-search ml-3 ml-md-4">
+            <a href="javascript:" data-toggle="modal" data-target="#search-modal"><i
+                    class="iconfont icon-search icon-2x"></i></a>
+          </li>
+          {//选项}
+          <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
+            <a href="javascript:" id="sidebar-switch" data-toggle="modal"
+               data-target="#sidebar"><i class="iconfont icon-classification icon-2x"></i></a>
+          </li>
+        </ul>
+      
+	  </div>
+    </div>
+  </div>
+  <div class="placeholder" style="height:50px"></div>
+</div>

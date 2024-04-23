@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/treetable-lay/treetable.css?v={:time()}" media="all">
+
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <table id="currentTable" class="layui-table layui-hide"
+               data-auth-add="{:auth('nav.node/add')}"
+               data-auth-edit="{:auth('nav.node/edit')}"
+               data-auth-delete="{:auth('nav.node/delete')}"
+               lay-filter="currentTable">
+        </table>
+    </div>
+</div>
+
+<script type="text/html" id="toolbar">
+    <button class="layui-btn layui-btn-sm layuimini-btn-primary" data-treetable-refresh><i class="fa fa-refresh"></i> </button>
+    <button class="layui-btn layui-btn-normal layui-btn-sm {if !auth('nav.node/add')}layui-hide{/if}" data-open="nav.node/add" data-title="添加" data-full="true"><i class="fa fa-plus"></i> 添加</button>
+    <button class="layui-btn layui-btn-sm layui-btn-danger {if !auth('nav.node/delete')}layui-hide{/if}" data-url="nav.node/delete" data-treetable-delete="currentTableRenderId"><i class="fa fa-trash-o"></i> 删除</button>
+</script>

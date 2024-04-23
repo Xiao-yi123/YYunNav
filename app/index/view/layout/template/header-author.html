@@ -1,0 +1,18 @@
+{//作者信息 在Author会用到 暂时没使用}
+<div class="container d-flex align-items-end position-relative mb-4">
+  <img alt="" src="{$AuthorInfo.head_img}"
+       class=" avatar avatar-70 current-author photo" height="70" width="70">
+  <div class="author-meta-r ml-0 ml-md-3">
+    <div class="h2 text-white mb-2">
+        {$AuthorInfo.systemuserinfo.nickname}
+      <small class="text-xs">
+				<span class="badge vc-violet2 btn-outline mt-2">
+					管理员
+				</span>
+      </small>
+    </div>
+    <div class="text-white text-sm">
+        {$AuthorInfo.systemuserinfo.sign|default="这个人很懒，什么都没留下"}
+    </div>
+  </div>
+</div>

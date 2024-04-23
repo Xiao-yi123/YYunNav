@@ -1,0 +1,200 @@
+{
+  "常用": [
+    {
+      "name": "百度",
+      "e_name": "baidu",
+      "link": "https://www.baidu.com/s?wd=",
+      "placeholder": "百度一下"
+    },
+    {
+      "name": "谷歌",
+      "e_name": "goole",
+      "link": "https://www.google.com/search?q=",
+      "placeholder": "谷歌两下"
+    },
+    {
+      "name": "淘宝",
+      "e_name": "taobao",
+      "link": "https://s.taobao.com/search?q=",
+      "placeholder": "淘宝"
+    },
+    {
+      "name": "必应",
+      "e_name": "bing",
+      "link": "https://cn.bing.com/search?q=",
+      "placeholder": "微软Bing搜索"
+    }
+  ],
+  "搜索": [
+    {
+      "name": "百度",
+      "e_name": "naidu1",
+      "link": "https://www.baidu.com/s?wd=",
+      "placeholder": "百度一下"
+    },
+    {
+      "name": "谷歌",
+      "e_name": "goole1",
+      "link": "https://www.google.com/search?q=",
+      "placeholder": "谷歌两下"
+    },
+    {
+      "name": 360,
+      "e_name": 360,
+      "link": "https://www.so.com/s?q=",
+      "placeholder": "360好搜"
+    },
+    {
+      "name": "搜狗",
+      "e_name": "sogo",
+      "link": "https://www.sogou.com/web?query=",
+      "placeholder": "搜狗搜索"
+    },
+    {
+      "name": "必应",
+      "e_name": "bing1",
+      "link": "https://cn.bing.com/search?q=",
+      "placeholder": "微软Bing搜索"
+    },
+    {
+      "name": "神马",
+      "e_name": "sm",
+      "link": "https://yz.m.sm.cn/s?q=",
+      "placeholder": "UC移动端搜索"
+    }
+  ],
+  "工具": [
+    {
+      "name": "权重查询",
+      "e_name": "br",
+      "link": "https://rank.chinaz.com/all/",
+      "placeholder": "请输入网址(不带https://)"
+    },
+    {
+      "name": "友链检测",
+      "e_name": "links",
+      "link": "https://link.chinaz.com/",
+      "placeholder": "请输入网址(不带https://)"
+    },
+    {
+      "name": "备案查询",
+      "e_name": "icp",
+      "link": "https://icp.aizhan.com/",
+      "placeholder": "请输入网址(不带https://)"
+    },
+    {
+      "name": "PING检测",
+      "e_name": "ping",
+      "link": "https://ping.chinaz.com/",
+      "placeholder": "请输入网址(不带https://)"
+    },
+    {
+      "name": "死链检测",
+      "e_name": 404,
+      "link": "https://tool.chinaz.com/Links/?DAddress=",
+      "placeholder": "请输入网址(不带https://)"
+    },
+    {
+      "name": "关键词挖掘",
+      "e_name": "ciku",
+      "link": "https://www.ciku5.com/s?wd=",
+      "placeholder": "请输入关键词"
+    }
+  ],
+  "社区": [
+    {
+      "name": "知乎",
+      "e_name": "zhihu",
+      "link": "https://www.zhihu.com/search?type=content&q=",
+      "placeholder": "知乎-有问题就有答案"
+    },
+    {
+      "name": "微信",
+      "e_name": "wechat",
+      "link": "https://weixin.sogou.com/weixin?type=2&query=",
+      "placeholder": "微信，是一种生活方式"
+    },
+    {
+      "name": "微博",
+      "e_name": "weibo",
+      "link": "https://s.weibo.com/weibo/",
+      "placeholder": "微博"
+    },
+    {
+      "name": "豆瓣",
+      "e_name": "douban",
+      "link": "https://www.douban.com/search?q=",
+      "placeholder": "豆瓣"
+    },
+    {
+      "name": "搜外问答",
+      "e_name": "why",
+      "link": "https://ask.seowhy.com/search/?q=",
+      "placeholder": "SEO问答社区"
+    }
+  ],
+  "生活": [
+    {
+      "name": "淘宝",
+      "e_name": "taobao1",
+      "link": "https://s.taobao.com/search?q=",
+      "placeholder": "淘宝"
+    },
+    {
+      "name": "京东",
+      "e_name": "jd",
+      "link": "https://search.jd.com/Search?keyword=",
+      "placeholder": "京东"
+    },
+    {
+      "name": "下厨房",
+      "e_name": "xiachufang",
+      "link": "https://www.xiachufang.com/search/?keyword=",
+      "placeholder": "下厨房"
+    },
+    {
+      "name": "香哈菜谱",
+      "e_name": "xiangha",
+      "link": "https://www.xiangha.com/so/?q=caipu&s=",
+      "placeholder": "香哈菜谱"
+    },
+    {
+      "name": 12306,
+      "e_name": 12306,
+      "link": "https://www.12306.cn/?",
+      "placeholder": "中国铁路12306网站"
+    },
+    {
+      "name": "快递100",
+      "e_name": "kd100",
+      "link": "https://www.kuaidi100.com/?",
+      "placeholder": "快递100-查快递,寄快递,上快递100"
+    }
+  ],
+  "求职": [
+    {
+      "name": "智联招聘",
+      "e_name": "zhaoping",
+      "link": "https://sou.zhaopin.com/jobs/searchresult.ashx?kw=",
+      "placeholder": "好工作上智联招聘"
+    },
+    {
+      "name": "前程无忧",
+      "e_name": "51job",
+      "link": "https://search.51job.com/?",
+      "placeholder": "前程无忧: 上海招聘网-上海人才网-上海招聘信息"
+    },
+    {
+      "name": "拉钩网",
+      "e_name": "lagou",
+      "link": "https://www.lagou.com/jobs/list_",
+      "placeholder": "拉钩网-专业的互联网行业招聘平台 - 职场导航"
+    },
+    {
+      "name": "猎聘网",
+      "e_name": "liepin",
+      "link": "https://www.liepin.com/zhaopin/?key=",
+      "placeholder": "【猎聘】-招聘_找工作_求职_企业招人平台"
+    }
+  ]
+}

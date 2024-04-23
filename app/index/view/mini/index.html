@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{:sysconfig('site','site_name')}|{:sysconfig('site','site_title')}</title>
+    <meta property="url" content="{$Request.domain}">
+    <meta property="title" content="{:sysconfig('site','site_title')}">
+    <meta property="site_name" content="{:sysconfig('site','site_name')}">
+    <meta name="theme-color" content="#f9f9f9">
+    <meta name="keywords" content="{:sysconfig('site','site_keywords')}">
+    <meta name="description" content="{:sysconfig('site','site_description')}">
+
+    <link rel="icon" type="image/x-ico" href="{:sysconfig('site','logo_image')}">
+    <link rel="shortcut icon" href="../ico.ico">
+    <link rel='stylesheet' id='iconfont-css' href='__STATIC_INDEX__/mini/css/iconfont.css' type='text/css' media='all'>
+    <link rel='stylesheet' id='bootstrap-css' href='__STATIC_INDEX__/mini/css/bootstrap.min.css' type='text/css' media='all'>
+    <link rel='stylesheet' id='style-css' href='__STATIC_INDEX__/mini/css/style.min.css' type='text/css' media='all'>
+    <script src='__STATIC_INDEX__/mini/js/jquery.min.js' id='jquery-js'></script>
+</head>
+
+<body class="user-bookmark-body bookmark-default">
+<div class="page-container">
+    <div class="bookmark-bg">
+        <div class="img-bg" id="img-bg"></div>
+        <div class="gradient-linear"></div>
+    </div>
+    <header class="navbar navbar-dark fixed-top">
+        <div class="weather">
+            <div id="he-plugin-simple" style="display: contents;"></div>
+            <script>WIDGET = {
+                "CONFIG": {
+                    "modules": "02",
+                    "background": "5",
+                    "tmpColor": "FFFFFF",
+                    "tmpSize": "20",
+                    "cityColor": "FFFFFF",
+                    "citySize": "16",
+                    "aqiColor": "FFFFFF",
+                    "aqiSize": "16",
+                    "weatherIconSize": "30",
+                    "alertIconSize": "18",
+                    "padding": "0px 5px 0px 5px",
+                    "shadow": "0",
+                    "language": "auto",
+                    "fixed": "false",
+                    "vertical": "top",
+                    "horizontal": "left",
+                    "key": "257fe54e3a0b4cd29b399d2831bd56e0"
+                }
+            }</script>
+            <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0" defer=""></script>
+        </div>
+        <ul class="nav navbar-menu">
+            <li class="nav-login ml-3">
+                <a href="/" class="text-light" title="主页">
+                    <i class="iconfont icon-home bookmark-ico icon-2x" style="font-size: 1.5em; position: relative; left: -10px; top: 0px;"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <div class="header-big mb-4">
+        <div class="s-search">
+            <div id="search" class="s-search mx-auto">
+                <div class="big-title text-center mb-3 mb-md-5 mt-2">
+                    <p class="h1" style="letter-spacing: 6px;">{:sysconfig('site','site_name')}</p></div>
+                <div id="search-list-menu" class="hide-type-list">
+                    <div class="s-type text-center overflow-x-auto">
+                        <div class="s-type-list big">
+                            <div class="anchor" style="position: absolute; left: 50%; opacity: 0;"></div>
+                            {foreach $SearchData as $key=>$vo}
+                            <label for="type-{$vo[0]->e_name}" data-id="group-b">
+                                <span>{$key}</span>
+                            </label>
+
+                            {/foreach}
+                        </div>
+                    </div>
+                </div>
+                <form action="https://nav.iowen.cn?s=" method="get" target="_blank" class="super-search-fm">
+                    <input type="text" id="search-text" class="form-control smart-tips search-key" zhannei="" placeholder="输入关键字搜索" style="outline:0" autocomplete="off">
+                    <button type="submit">
+                        <i class="iconfont icon-search"></i>
+                    </button>
+                </form>
+                <div id="search-list" class="hide-type-list">
+                    {foreach $SearchData as $key=>$vo}
+                    <div class="search-group">
+                        <ul class="search-type">
+                            {for start="0" end='count($vo)'}
+                            <li>
+                                <input checked="checked" hidden="" type="radio" name="type" id="type-{$vo[$i]->e_name}" value="{$vo[$i]->link}" data-placeholder="{$vo[$i]->placeholder}">
+                                <label for="type-{$vo[$i]->e_name}">
+                                    <span class="text-muted">{$vo[$i]->name}</span>
+                                </label>
+                            </li>
+                            {/for}
+                        </ul>
+                    </div>
+                    {/foreach}
+                </div>
+                <div class="card search-smart-tips" style="display: none">
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="quick-sites position-relative">
+        <div class="container text-center px-5">
+            <div class="row">
+                {foreach $SiteDate as $vo}
+                <a class="sites-btn col-3 col-md-2 text-center mb-4" target="_blank" href="{$vo.url}" title="{$vo.description}" rel=" noopener">
+                    <div class="d-flex mb-2">
+                        <div class="sites-icon mx-auto ub-blur-bg">
+                            <img class="lazy" src="{$vo.image_path}" data-src="{$vo.image_path}" onerror="javascript:this.src='https://nav.iowen.cn/wp-content/themes/onenav/images/favicon.png'" alt="{$vo.description}">
+                        </div>
+                    </div>
+                    <div class="sites-title ub-blur-bg px-2 text-xs overflowClip_1">
+                        <span>{$vo.name}</span>
+                    </div>
+                </a>
+                {/foreach}
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer footer-type-1 position-relative text-xs">
+        <div id="footer-tools" class="d-flex flex-column">
+            <div id="footer-tools" class="d-flex flex-column">
+                <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top" style="display: none;" one-link-mark="yes">
+                    <i class="iconfont icon-to-up"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-inner text-center text-light my-3" style="color: #f8f9fa45!important;">
+            <div class="footer-text">Copyright © 2024
+                <a href="/" title="{:sysconfig('site','site_name')}" class="" rel="home">{:sysconfig('site','site_name')}</a>&nbsp;
+                <a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">{:sysconfig('site','site_beian')}</a>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="__STATIC_INDEX__/mini/js/bing.js"></script>
+<script src="__STATIC_INDEX__/mini/js/popper.min.js"></script>
+<script src='__STATIC_INDEX__/mini/js/bootstrap.min.js' id='bootstrap-js'></script>
+<script src="__STATIC_INDEX__/mini/js/theia-sticky-sidebar.js"></script>
+<script src='__STATIC_INDEX__/mini/js/lazyload.min.js' id='lazyload-js'></script>
+<script src='__STATIC_INDEX__/mini/js/app.min.js' id='appjs-js'></script>
+</body>
+
+</html>

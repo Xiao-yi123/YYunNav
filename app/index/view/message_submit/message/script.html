@@ -1,0 +1,42 @@
+<script type='text/javascript' src='__STATIC_INDEX__/wp-includes/js/comment-reply.min-5.6.2.js' id='comment-reply-js'></script>
+<script type='text/javascript' src='__STATIC_INDEX__/wp-content/themes/onenav/js/comments-ajax-3.03029.1.js' id='comments-ajax-js'></script>
+<script type="text/javascript" id="message-form-js">
+  $("#commentform input[name='submit']").on('click',function () {
+    let formData = urlParamsToJson($('#commentform').serialize());
+    let submitInput = $(this);
+      submitInput.attr({
+        "disabled":'disabled',
+        "value"     :'提交中...'
+    });
+    if(!(formData['content'] && formData['author'] && formData['email'] && formData['image_captcha'])){
+      showAlert(JSON.parse('{"status":3,"msg":"对不起！您提交的数据不完整！请完善后再进行提交！"}'));
+        submitInput.removeAttr("disabled");
+        submitInput.attr("value",'发表评论');
+      return false;
+    }
+
+    $.ajax({
+      url:         "/Message",
+      type:        'POST',
+      dataType:    'json',
+      data:        formData
+    }).done(function (result) {
+        showAlert(JSON.parse(`{"status":${result['code']},"msg":"${result['msg']}"}`));
+        console.log(result)
+        if(result['code'] === 1){
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
+        }else{
+            submitInput.removeAttr("disabled");
+            submitInput.attr("value",'发表评论');
+        }
+
+
+    }).fail(function (result) {
+      showAlert(JSON.parse(`{"status":${result['code']},"msg":"网络连接错误！"}`));
+    });
+    return false;
+  });
+
+</script>

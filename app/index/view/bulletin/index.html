@@ -1,0 +1,26 @@
+<div id="content" class="container my-4 my-md-5" style="transform: none;">
+    {include file="bulletin/component/post-cover"}
+
+    {present  name='$bulletin.conunt'}
+    <main class="content" role="main">
+        <div class="content-wrap">
+            <div class="content-layout">
+                <div class="cat_list">
+                    {foreach $bulletin.top as $vo}
+                        {include file="bulletin/component/bulletin-card"}
+                    {/foreach}
+
+                    {foreach $bulletin.no_top as $vo}
+                        {include file="bulletin/component/bulletin-card"}
+                    {/foreach}
+                </div>
+                <div class="posts-nav">
+                </div>
+            </div>
+        </div>
+    </main>
+    {else /}
+        {include file="bulletin/component/bulletin_main"}
+    {/present}
+
+</div>

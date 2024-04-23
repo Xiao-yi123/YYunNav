@@ -1,0 +1,34 @@
+{//页脚工具}
+<footer>
+  <div id="footer-tools" class="d-flex flex-column">
+    <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+      <i class="iconfont icon-to-up"></i>
+    </a>
+    <!-- 天气  -->
+    <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
+       rel="search" one-link-mark="yes">
+      <i class="iconfont icon-search"></i>
+    </a>
+    <a href="mini" class="btn rounded-circle kefu m-1" target="_blank" data-toggle="tooltip" data-placement="left" title="" data-original-title="mini 书签">
+      <i class="iconfont icon-24gf-table"></i>
+    </a>
+    <!-- 天气 end -->
+    <a href="javascript:;" id="switch-mode" class="btn rounded-circle m-1"
+       data-toggle="tooltip" data-placement="left" title="夜间模式">
+      <i class="mode-ico iconfont icon-light"></i>
+    </a>
+  </div>
+</footer>
+<script type='text/javascript' id="footer">
+  $("#switch-mode").on("click",function () {
+    if($(this).attr('data-placement')=="left"){
+      $(this).attr('data-original-title',"日间模式");
+      $(this).attr('data-placement',"right");
+      $("body").attr("class",'io-black-mode');
+    }else{
+      $(this).attr('data-original-title',"夜间模式");
+      $(this).attr('data-placement',"left");
+      $("body").attr("class",'io-grey-mode');
+    }
+  })
+</script>

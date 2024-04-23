@@ -1,0 +1,23 @@
+{//默认卡片}
+<div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a   ">
+
+    <div class="url-body default">
+        <a href="/go?url={:encryptDecrypt('url',$LinkDataVo.url,0)}" data-id="{$LinkDataVo.id}" data-url="{$LinkDataVo.url}" class="card no-c  mb-4 site-{$LinkDataVo.id}" data-toggle="tooltip" data-placement="bottom" title="{$LinkDataVo.description}">
+            <div class="card-body">
+                <div class="url-content d-flex align-items-center">
+                    <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class="lazy" src="{$LinkDataVo.image_path}" onerror="javascript:this.src='https://nav.iowen.cn/wp-content/themes/onenav/images/favicon.png'" alt="{$LinkDataVo.name}">
+                    </div>
+                    <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                            <strong>{$LinkDataVo.name}</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">{$LinkDataVo.description}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/go?url={$LinkDataVo.url}" class="togo text-center text-muted is-views" target="_blank" data-id="{$LinkDataVo.id}" data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow"><i class="iconfont icon-goto"></i></a>
+    </div>
+</div>

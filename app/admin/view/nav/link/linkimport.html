@@ -1,0 +1,67 @@
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">分类</label>
+            <div class="layui-input-block">
+                <select name="node_id" class="layui-select layui-form" lay-verify="required">
+                    {foreach $pidMenuList as $vo}
+                    <option value="{$vo.id}">{$vo.name}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label required">链接图片</label>
+            <div class="layui-input-block layuimini-upload">
+                <input name="file_path" class="layui-input layui-col-xs6" disabled lay-reqtext="文件路径" placeholder="文件路径" value="">
+                <div class="layuimini-upload-btn">
+                    <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none;">
+                    <span><a class="layui-btn layui-btn-normal" data-name="select-file" ><i class="fa fa-list"></i>选择文件</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="layui-upload-list" data-name="demo">
+            <fieldset class="layui-elem-field get-all">
+                <legend>示例</legend>
+                <div class="layui-field-box">
+                    <table class="layui-table">
+                        <thead>
+                            <th>接口名-name</th>
+                            <th>url</th>
+                            <th>描述-description</th>
+                        </thead>
+                        <tbody id="ID-upload-demo-files-list">
+                            <td>GitHub</td>
+                            <td>https://github.com/</td>
+                            <td>GitHub是一个面向开源及私有软件项目的托管平台，因为只支持Git作为唯一的版本库格式进行托管，故名GitHub。</td>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+        <div class="layui-upload-list" data-name="success">
+            <fieldset class="layui-elem-field get-all">
+                <legend>成功列表</legend>
+                <div class="layui-field-box">
+                    <table id="success_table" lay-skin="auto"></table>
+                </div>
+            </fieldset>
+        </div>
+        <div class="layui-upload-list" data-name="error">
+            <fieldset class="layui-elem-field get-all">
+                <legend>失败列表</legend>
+                <div class="layui-field-box">
+                    <table id="error_table" lay-skin="auto"></table>
+                </div>
+            </fieldset>
+        </div>
+        <div class=" text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm">确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>
+

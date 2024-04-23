@@ -1,0 +1,51 @@
+{//公告内容}
+<main class="content" role="main" style="transform: none;">
+  <div class="content-wrap">
+    <div class="content-layout">
+      <div class="panel card">
+        <div class="card-body">
+          <h1 class="h2 mb-3">{$bulletin.title}</h1>
+          <div class="d-flex flex-fill text-muted text-sm mb-5">
+              <span class="mr-3 d-none d-sm-block">
+                <i class="iconfont icon-time"></i>{$bulletin.time}</span>
+            <span class="mr-3">
+                <a href="/Author?id={$bulletin.id}" title="小马大哥哥">
+                  <i class="iconfont icon-user-circle"></i>{$bulletin.username}</a>
+              </span>
+            <div class="flex-fill"></div>
+          </div>
+          <div class="panel-body single mt-2">
+            <p>{$bulletin.content}</p>
+          </div>
+          <div class="tags my-2"></div>
+        </div>
+      </div>
+
+      <div class="near-navigation rounded mt-4 py-2">
+        <div class="nav previous border-right border-color">
+          {if $pagination.left}
+          <a class="near-permalink" href="/Bulletin?id={$pagination.left.id}">
+            <span>上一篇</span>
+            <h4 class="near-title">{$pagination.left.title}</h4>
+          </a>
+          {else /}
+          <span>上一篇</span>
+          <h4 class="near-title">没有更多了...</h4>
+          {/if}
+        </div>
+        <div class="nav next border-left border-color">
+          {if $pagination.right}
+          <a class="near-permalink" href="/Bulletin?id={$pagination.right.id}">
+            <span>上一篇</span>
+            <h4 class="near-title">{$pagination.right.title}</h4>
+          </a>
+          {else /}
+          <span>上一篇</span>
+          <h4 class="near-title">没有更多了...</h4>
+          {/if}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>

@@ -1,0 +1,33 @@
+<div id="respond_box">
+  <div id="respond" class="comment-respond">
+    <form action="https://nav.iowen.cn/wp-comments-post.php" method="post" id="commentform" class="text-sm mb-4">
+      <div class="visitor-avatar d-flex flex-fill mb-2">
+        <img class="v-avatar rounded-circle" src="http://cdn.u2.huluxia.com/g3/M02/26/C9/wKgBOVwJGOOAYDyUAAOZ98CV3Tw053.jpg">
+      </div>
+      <div class="comment-textarea mb-3">
+        <textarea name="content" id="content" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+      </div>
+
+      <div id="comment-author-info" class="row  row-sm">
+        <div class="col-sm-6 col-lg-6 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"></div>
+        <div class="col-sm-6 col-lg-6 mb-3"><input type="email" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3"></div>
+      </div>
+      <div class="d-flex justify-content-end flex-wrap">
+        <input type="hidden" name="action" value="io_submit_link">
+        <div class="image-captcha-group">
+          <input type="text" size="6" name="image_captcha" class="form-control" placeholder="图形验证码" autocomplete="off">
+          <span class="image-captcha" data-id="io_submit_link" data-toggle="tooltip" title="" data-original-title="点击刷新">
+            <img alt="img code" src="{:captcha_src()}" onclick="this.src = '<?php echo captcha_src(); ?>?t=' + new Date().getTime();">
+          </span>
+        </div>
+        <a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2 ml-2">再想想</a>
+        <input class="btn btn-dark custom_btn-d ml-2" name="submit" type="button" id="TencentCaptcha" tabindex="5" value="发表评论" data-appid="2095453596">
+        <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+        <input type="hidden" name="comment_post_ID" value="507" id="comment_post_ID">
+
+      </div>
+    </form>
+
+    <div class="clear"></div>
+  </div>
+</div>

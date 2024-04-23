@@ -1,0 +1,26 @@
+{//单个评论内容}
+<div id="comment-{$CommentItem.id}" class="comment_body d-flex flex-fill">
+  <div class="profile mr-2 mr-md-3">
+    <img alt="{$CommentItem.author}" src="http://cdn.u2.huluxia.com/g3/M02/26/C9/wKgBOVwJGOOAYDyUAAOZ98CV3Tw053.jpg" class="avatar avatar-96 photo" height="96" width="96" loading="lazy" />
+  </div>
+  <section class="comment-text d-flex flex-fill flex-column">
+    <div class="comment-info d-flex align-items-center mb-1">
+      <div class="comment-author text-sm w-100">
+        <a href="javascript:;" target="_blank" rel="nofollow noopener noreferrer" class="url">{$CommentItem.author}</a>
+      </div>
+    </div>
+    <div class="comment-content d-inline-block text-sm">
+      {$CommentItem.content}
+    </div>
+    <div class="d-flex flex-fill text-xs text-muted pt-2">
+      <div class="comment-meta">
+        <div class="info">
+          <time itemprop="datePublished" datetime="2020-04-04T20:25:25+08:00">{$CommentItem.create_time}</time>
+          <span class="info-location"><i class="iconfont icons8-location mr-1"></i>{$CommentItem.place}</span>
+        </div>
+      </div>
+      <div class="flex-fill"></div>
+      <a rel="nofollow" class="comment-reply-link" href="javascript:;" data-commentid="{$CommentItem.id}" data-postid="507" data-belowelement="comment-{$CommentItem.id}" data-respondelement="respond" >回复</a>
+    </div>
+  </section>
+</div>

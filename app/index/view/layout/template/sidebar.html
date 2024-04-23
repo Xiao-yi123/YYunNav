@@ -1,0 +1,53 @@
+{//侧边栏布局}
+<div id="sidebar" class="sticky sidebar-nav fade mini-sidebar" style="width: 60px;">
+    <div class="modal-dialog h-100  sidebar-nav-inner">
+
+        {//侧边栏logo}
+        <div class="sidebar-logo border-bottom border-color">
+            <!-- logo -->
+            <div class="logo overflow-hidden">
+                <a href="" class="logo-expanded">
+                    <img src="__STATIC_LOGO__/yiyunnavlogo.png" height="40" class="logo-light"
+                         alt="{:sysconfig('site','site_name')}">
+                    <img src="__STATIC_LOGO__/yiyunnavlogo.png"  height="40" class="logo-dark d-none"
+                         alt="{:sysconfig('site','site_name')}">
+                </a>
+                <a href="" class="logo-collapsed">
+                    <img src="__STATIC_LOGO__/yiyunlogo.png" height="40" class="logo-light"
+                         alt="{:sysconfig('site','site_name')}">
+                    <img src="__STATIC_LOGO__/yiyunlogo.png" height="40" class="logo-dark d-none"
+                         alt="{:sysconfig('site','site_name')}">
+                </a>
+            </div>
+            <!-- logo end -->
+        </div>
+
+        <div class="sidebar-menu flex-fill">
+            <div class="sidebar-scroll">
+                <div class="sidebar-menu-inner">
+                    <ul>
+						{include file="layout/component/sidebar-top-menu-mini-header"/}
+
+                        {foreach $SidebarItem as $key=>$vo }
+                            {include file="layout/component/sidebar-item"/}
+                        {/foreach}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-top py-2 border-color">
+            <div class="flex-bottom">
+                <ul>
+                    {foreach $SidebarTopItem as $key=>$vo}
+                    <li	class="menu-item menu-item-type-post_type menu-item-object-pagesidebar-item">
+                        <a href="{$vo->href}">
+                            <i class="iconfont {$vo->icon} icon-fw icon-lg mr-2"></i>
+                            <span>{$key}</span>
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

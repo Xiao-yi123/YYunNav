@@ -1,0 +1,35 @@
+{//弹窗的搜索项}
+<div id="search" class="s-search mx-auto my-4">
+  <div id="search-list" class="hide-type-list">
+    <div class="s-type">
+      <span></span>
+      <div class="s-type-list">
+        {foreach $SearchData as $key=>$vo}
+        <label for="m_type-{$vo[0]->e_name}" class="">{$key}</label>
+        {/foreach}
+      </div>
+    </div>
+    {foreach $SearchData as $key=>$vo}
+    <div class="search-group">
+      <span class="type-text text-muted">{$key}</span>
+      <ul class="search-type">
+        {for start="0" end='count($vo)'}
+        <li>
+          <input checked="checked" hidden="" type="radio" name="type2" id="m_type-{$vo[$i]->e_name}" value="{$vo[$i]->link}" data-placeholder="{$vo[$i]->placeholder}" for="m_type-{$vo[$i]->name}">
+          <label for="m_type-{$vo[$i]->e_name}">
+            <span class="text-muted">{$vo[$i]->name}</span>
+          </label>
+        </li>
+        {/for}
+      </ul>
+    </div>
+    {/foreach}
+  </div>
+  <form action="https://nav.iowen.cn?s=" method="get" target="_blank" class="super-search-fm">
+    <input type="text" id="m_search-text" class="form-control smart-tips search-key" zhannei="" autocomplete="off" placeholder="输入关键字搜索" style="outline:0" />
+    <button type="submit"><i class="iconfont icon-search"></i></button>
+  </form>
+  <div class="card search-smart-tips" style="display: none">
+    <ul></ul>
+  </div>
+</div>

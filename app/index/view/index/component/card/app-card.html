@@ -1,0 +1,16 @@
+{//app卡片}
+<div class="io-px-2 col-4 col-md-3 col-lg-2 col-xl-8a col-xxl-10a pb-1 ">
+
+  <div class="card-app default list-item">
+    <div class="media p-0 app-rounded" style="background-image: linear-gradient(130deg, #f9f9f9, #e8e8e8);">
+      <a class="media-content" href="{$LinkDataVo.url}" target="_blank" data-bg="url({$LinkDataVo.image_path})" style="background-size: 70%; background-image: url({$LinkDataVo.image_path});" data-was-processed="true"></a>
+    </div>
+    <div class="list-content text-center pt-2">
+      <div class="list-body ">
+        <a href="{$LinkDataVo.url}" target="_blank" class=" list-title text-md overflowClip_1">{$LinkDataVo.name}</a>
+        <div class="mt-1">
+          <div class="list-subtitle text-muted text-xs overflowClip_1">{$LinkDataVo.description}</div></div>
+      </div>
+    </div>
+  </div>
+</div>

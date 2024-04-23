@@ -1,0 +1,21 @@
+{//公告框}
+<div id="bulletin_box" class="card my-2">
+  <div class="card-body py-1 px-2 px-md-3 d-flex flex-fill text-xs text-muted">
+	<div><i class="iconfont icon-bulletin" style="line-height:25px"></i></div>
+	<div class="bulletin mx-1 mx-md-2 carousel-vertical">
+	  <div class="carousel slide" data-ride="carousel" data-interval="3000">
+		<div class="carousel-inner" role="listbox">
+			{foreach $Bulletin as $key=>$vo}
+		  <div class="carousel-item {if $key==0}active{/if}">
+			  <a class="overflowClip_1" href="Bulletin?id={$vo.id}">{$vo.title}</a>
+		  </div>
+			{/foreach}
+		</div>
+	  </div>
+	</div>
+	<div class="flex-fill"></div>
+	<a title="关闭" href="javascript:;" rel="external nofollow" class="bulletin-close"
+	   onclick="$('#bulletin_box').slideUp('slow');"><i class="iconfont icon-close"
+														style="line-height:25px"></i></a>
+  </div>
+</div>
