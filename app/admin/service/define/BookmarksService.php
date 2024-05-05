@@ -98,10 +98,14 @@ class BookmarksService
         $Rurl = 'https://api.yiyunt.cn/api/title?url='.$url;
         $result = json_decode(file_get_contents($Rurl,false,stream_context_create($stream_opts)),true);
 
-        if($result['code']){
-            return $result['data']['description'];
-        }else{
-            return "";
+        try{
+            if($result['code']){
+                return $result['data']['description'];
+            }else{
+                return "";
+            }
+        }catch (\Exception  $e){
+            return '';
         }
     }
 }

@@ -223,6 +223,7 @@ class Link extends AdminController
             if($method == "file"){
                 $file = $this->request->file('file');
                 $FileS = new FileService();
+
                 try{
                     $Extension = $file->getOriginalExtension();
                     if(!($Extension == "xlsx")){
@@ -234,7 +235,7 @@ class Link extends AdminController
                         throw new Exception("对不起！上传的表格缺少数据，请完善后上传");
                     }
 
-                    if(!(count($ExcelData[0])==3)){
+                    if(!(count($ExcelData[0])==3 || count($ExcelData[0])==4)){
                         throw new Exception("对不起！上传的表格不符合要求，请查看示例按要求上传");
                     }
 
@@ -263,14 +264,16 @@ class Link extends AdminController
 
                 foreach($post['file'] as $vo){
                     try {
-                        $linkdata = [
-                            'name'  => $vo[0],
-                            'url'   =>  $vo[1],
-                            'description' => $vo[2],
-                        ];
+                        $linkdata = count($vo)==3?['name'  => $vo[0],'url'   =>  $vo[1],'description' => $vo[2]]
+                            :['name'  => $vo[0],'url'   =>  $vo[1],'description' => $vo[2],'image_base64'=>$vo[3]];
                         $this->model->validate($linkdata,true,true);
 
-                        $linkdata['image_path'] = $this->Image->DownloadImage($vo[1],"random",$path);
+                        if(count($vo)==3)
+                            $linkdata['image_path'] = $this->Image->DownloadImage($vo[1],"random",$path);
+                        else{
+                            $BaseS = new Base64Service();
+                            $linkdata['image_path'] = $BaseS->Base64ToImage($vo[3],$path,$vo[1]);
+                        }
                         $linkdata['node_id'] = $post['node_id'];
 
                         $this->model->save($linkdata);

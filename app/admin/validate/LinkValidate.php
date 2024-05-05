@@ -15,7 +15,7 @@ class LinkValidate extends Validate
      * @var array
      */
     protected $rule = [
-        "name"  =>  'require|max:30|min:2',
+        "name"  =>  'require|max:50|min:2',
         "description"   =>  "max:255",
         "url"   =>  "require",
         'image_base64'  =>  'CheckBase64Image'
@@ -28,7 +28,7 @@ class LinkValidate extends Validate
      * @var array
      */
     protected $message = [
-        'name.max'  =>  "资源名长度不能超过30",
+        'name.max'  =>  "资源名长度不能超过50",
         'name.min'  =>  "资源名长度不能少于2",
         'description.max'  =>  "资源描述长度不能超过255",
         'image_base64.CheckBase64Image'  =>  '资源图片数据不正确'

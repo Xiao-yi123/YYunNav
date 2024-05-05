@@ -19,7 +19,7 @@ class FileService
     {
         $data = $this->ReadExcel($path);
 
-        $nameIndex = $URLIndex = $descriptionIndex = -1;
+        $nameIndex = $URLIndex = $descriptionIndex = $iconIndex = -1;
         foreach ($data[0] as $key => $vo){
             if($vo == 'name' || $vo == '接口名'){
                 $nameIndex = $key;
@@ -30,18 +30,17 @@ class FileService
             if($vo == 'description' || $vo == '描述'){
                 $descriptionIndex = $key;
             }
+            if($vo == 'icon' || $vo == '图标'){
+                $iconIndex = $key;
+            }
         }
         if($nameIndex == -1 || $URLIndex == -1 || $descriptionIndex === -1){
             return false;
         }
-        $newData = [
-            ['name','url',"description"]
-        ];
+        $newData = [($iconIndex == -1)?['name','url',"description"]:['name','url',"description",'icon']];
         foreach ($data as $key=>$vo){
             if($key > 0){
-                $newData[] = [
-                    $vo[$nameIndex],$vo[$URLIndex],$vo[$descriptionIndex]
-                ];
+                $newData[] = ($iconIndex == -1)?[$vo[$nameIndex],$vo[$URLIndex],$vo[$descriptionIndex]]:[$vo[$nameIndex],$vo[$URLIndex],$vo[$descriptionIndex],$vo[$iconIndex]];
             }
         }
         return $newData;
