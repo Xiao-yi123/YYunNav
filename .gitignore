@@ -18,3 +18,4 @@ public/temp
 public/static/image/*
 composer.phar
 vendor
+.composer.lock
