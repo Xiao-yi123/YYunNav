@@ -17,7 +17,7 @@ Route::group('/',function (){
 //    go
     Route::rule('go','Index/go');
 //    ajax访问
-    Route::rule("ajax.php",'index/ajax');
+    Route::rule("ajax",'index/ajax');
 });
 
 //    留言

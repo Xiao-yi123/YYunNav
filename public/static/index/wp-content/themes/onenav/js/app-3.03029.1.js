@@ -475,7 +475,6 @@
         if( !t.hasClass('active') ){ 
             parent.find('a').removeClass('active');
             t.addClass('active');
-            console.log("ajax")
             if($(body).children(".ajax-loading").length == 0)
                 $(body).append('<div class="ajax-loading text-center rounded" style="position:absolute;display:flex;left:0;width:100%;top:-1rem;bottom:.5rem;background:rgba(125,125,125,.5)"><div class="col align-self-center"><i class="iconfont icon-loading icon-spin icon-2x"></i></div></div>');
             $.ajax({
