@@ -262,6 +262,7 @@ class Link extends AdminController
 
                 $path = $this->model->getImagePath(0,$post['node_id']);
 
+                $linkdatas = [];
                 foreach($post['file'] as $vo){
                     try {
                         $linkdata = count($vo)==3?['name'  => $vo[0],'url'   =>  $vo[1],'description' => $vo[2]]
@@ -276,8 +277,7 @@ class Link extends AdminController
                         }
                         $linkdata['node_id'] = $post['node_id'];
 
-                        $this->model->save($linkdata);
-
+                        $linkdatas[] = $linkdata;
                         $success[] = [
                             'name'  =>  $linkdata['name'],
                             'description'  =>  $linkdata['description'],
@@ -291,6 +291,11 @@ class Link extends AdminController
                             'reason'    =>  $e->getMessage(),
                         ];
                     }
+                }
+                try{
+                    $this->model->saveAll($linkdatas);
+                }catch (\Exception $e) {
+                    $this->error('导入失败：',$e->getMessage());
                 }
 
                 $result = [
