@@ -3,11 +3,8 @@
 *.log
 .env
 config/install/lock/install.lock
-runtime/admin
-runtime/log
-runtime/session
-runtime/temp
-runtime/cache
+runtime/*
+!runtime/.keep
 public/conf
 public/WowOss.exe
 public/upload
