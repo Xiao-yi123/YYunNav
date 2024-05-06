@@ -3,8 +3,6 @@
 *.log
 .env
 config/install/lock/install.lock
-/public/upload
-/public/docs
 runtime/admin
 runtime/log
 runtime/session
@@ -12,10 +10,9 @@ runtime/temp
 runtime/cache
 public/conf
 public/WowOss.exe
-runtime/*
+public/upload
+public/docs
 public/backup
 public/temp
 public/static/image/*
 composer.phar
-vendor
-.composer.lock

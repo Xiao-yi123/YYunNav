@@ -8,16 +8,14 @@ Mysql >= 5.7.0 (需支持innodb引擎)
 Apache 或 Nginx
 
 # 安装教程
-YYunNav 使用 Composer 来管理项目依赖。因此，在使用 EasyAdmin 之前，请确保你的机器已经安装了 Composer。
-## 通过git下载安装包，composer安装依赖包
+
+## 通过git下载安装包
 ```gitexclude
 第一步，下载安装包
-
 git clone https://github.com/Xiao-yi123/YYunNav
 
-第二步，安装依赖包
-composer install
-
+第二步，install 安装
+域名/install.php
 ```
 
 # 配置
@@ -30,6 +28,7 @@ composer install
 ## 安装提示
 - 运行网站地址, 会自动进入安装界面, 请根据提示进行设置, 然后点击安装。
 - 安装完成后会自动生成安装锁config/install/lock/install.lock, 如需重新安装, 删掉该文件即可。
+
 # 演示站点
 演示地址：http://nav.yiyunt.cn/
 
@@ -70,7 +69,11 @@ GitHub地址：https://github.com/Xiao-yi123/YYunNav
  
 * liutongxu：[https://github.com/liutongxu/liutongxu.github.io](https://github.com/liutongxu/liutongxu.github.io)
 
-# BUG反馈
+# BUG
+## 处理重复出现【请求验证失败，请重新刷新页面！】的错误
+删除 vendor 文件夹，重新下载项目，替换其中的 vendor 文件夹
+
+## 反馈
 项目使用过程成，如遇到BUG，可通过以下途径进行反馈。
 
 GitHub:https://github.com/Xiao-yi123/YYunNav/issues

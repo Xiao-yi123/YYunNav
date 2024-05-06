@@ -18,7 +18,6 @@ use CsrfVerify\drive\ThinkphpCache;
 use CsrfVerify\entity\CsrfVerifyEntity;
 use CsrfVerify\interfaces\CsrfVerifyInterface;
 use think\facade\Session;
-
 class CsrfMiddleware
 {
     use \app\common\traits\JumpTrait;
