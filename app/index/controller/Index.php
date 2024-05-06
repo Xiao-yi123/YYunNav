@@ -85,14 +85,13 @@ class Index extends IndexBase
         if($request->isPost()&&$reData['action']=="load_home_tab") {
             $id = $reData['id'];
             $CurrentLinkCard = $this->MLink->where([
-                "links_id"   =>  $id,
+                "node_id"   =>  $id,
                 "status"    =>  0
             ])->select()->toArray();
 
             $display_type = $this->MNode->where("id",$id)->find()['display_type'];
             $this->assign('display_type',$display_type);
             $this->assign('CurrentLinkCard',$CurrentLinkCard);
-//            halt($CurrentLinkCard);
             return $this->fetch("index/ajax/load_home_tab");
         }
     }
