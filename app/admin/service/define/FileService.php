@@ -19,28 +19,50 @@ class FileService
     {
         $data = $this->ReadExcel($path);
 
-        $nameIndex = $URLIndex = $descriptionIndex = $iconIndex = -1;
+        $nameIndex = $URLIndex = $descriptionIndex = $iconIndex = $nodeIndex = -1;
         foreach ($data[0] as $key => $vo){
-            if($vo == 'name' || $vo == '接口名'){
-                $nameIndex = $key;
+            switch ($vo){
+                case 'name':
+                case '接口名':
+                    $nameIndex = $key;
+                    break;
+                case 'url':
+                case 'URL':
+                    $URLIndex = $key;
+                    break;
+                case 'description':
+                case '描述':
+                    $descriptionIndex = $key;
+                    break;
+                case 'icon':
+                case '图标':
+                    $iconIndex = $key;
+                    break;
+                case "nodeNane":
+                case "节点名":
+                    $nodeIndex = $key;
+                    break;
             }
-            if($vo == 'url' || $vo == 'URL'){
-                $URLIndex = $key;
-            }
-            if($vo == 'description' || $vo == '描述'){
-                $descriptionIndex = $key;
-            }
-            if($vo == 'icon' || $vo == '图标'){
-                $iconIndex = $key;
-            }
+
         }
         if($nameIndex == -1 || $URLIndex == -1 || $descriptionIndex === -1){
             return false;
         }
-        $newData = [($iconIndex == -1)?['name','url',"description"]:['name','url',"description",'icon']];
+        $newData = [];
         foreach ($data as $key=>$vo){
             if($key > 0){
-                $newData[] = ($iconIndex == -1)?[$vo[$nameIndex],$vo[$URLIndex],$vo[$descriptionIndex]]:[$vo[$nameIndex],$vo[$URLIndex],$vo[$descriptionIndex],$vo[$iconIndex]];
+                $data = [
+                    'name'  =>  $vo[$nameIndex],
+                    'url'   =>  $vo[$URLIndex],
+                    'description'   =>  $vo[$descriptionIndex]
+                ];
+                if($iconIndex != -1){
+                    $data['icon']   =   $vo[$iconIndex];
+                }
+                if($nodeIndex != -1){
+                    $data['node'] = $vo[$nodeIndex];
+                }
+                $newData[] = $data;
             }
         }
         return $newData;

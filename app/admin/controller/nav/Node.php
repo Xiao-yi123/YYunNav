@@ -36,7 +36,6 @@ class Node extends AdminController
 
             $list = $this->model
                 ->where($where)
-                ->page($page, $limit)
                 ->order($this->sort)
                 ->select()->toArray();
             $linkList = $this->model->navLinks()->select()->toArray();

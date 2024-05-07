@@ -235,7 +235,7 @@ class Link extends AdminController
                         throw new Exception("对不起！上传的表格缺少数据，请完善后上传");
                     }
 
-                    if(!(count($ExcelData[0])==3 || count($ExcelData[0])==4)){
+                    if(!(count($ExcelData[0])>=3 && count($ExcelData[0])<=5)){
                         throw new Exception("对不起！上传的表格不符合要求，请查看示例按要求上传");
                     }
 
@@ -252,30 +252,40 @@ class Link extends AdminController
                 $success  = [];
                 $error = [];
 
-                $isDisplay = $this->model->NodeIsStatus([
-                    "node_id"   =>  $post['node_id'],
-                    'status'    =>  0
-                ]);
-                if($isDisplay == 3){
-                    $this->error('所在分类不展示，不可修改');
-                }
-
                 $path = $this->model->getImagePath(0,$post['node_id']);
 
                 $linkdatas = [];
                 foreach($post['file'] as $vo){
                     try {
-                        $linkdata = count($vo)==3?['name'  => $vo[0],'url'   =>  $vo[1],'description' => $vo[2]]
-                            :['name'  => $vo[0],'url'   =>  $vo[1],'description' => $vo[2],'image_base64'=>$vo[3]];
+                        $linkdata = ['name'  => $vo['name'],'url'   =>  $vo['url'],'description' => $vo['description']];
+                        if(key_exists('icon',$vo)){
+                            $linkdata['image_base64'] = $vo['icon'];
+                        }
                         $this->model->validate($linkdata,true,true);
 
-                        if(count($vo)==3)
-                            $linkdata['image_path'] = $this->Image->DownloadImage($vo[1],"random",$path);
-                        else{
+                        if(key_exists('icon',$vo)){
                             $BaseS = new Base64Service();
-                            $linkdata['image_path'] = $BaseS->Base64ToImage($vo[3],$path,$vo[1]);
+                            $linkdata['image_path'] = $BaseS->Base64ToImage($vo['icon'],$path,$vo['url']);
                         }
-                        $linkdata['node_id'] = $post['node_id'];
+                        else{
+                            $linkdata['image_path'] = $this->Image->DownloadImage($vo['url'],"random",$path);
+                        }
+
+                        if(key_exists('node',$vo)){
+                            $node = $this->NodeModel->where("name",$vo['node'])->find();
+                            if($node){
+                                $linkdata['node_id'] = $node['id'];
+                            }else{
+                                $nodeM = new NodeModel();
+                                $nodeM->save([
+                                    'name'  =>  $vo['node']
+                                ]);
+                                $linkdata['node_id'] = $nodeM->id;
+
+                            }
+                        }else{
+                            $linkdata['node_id'] = $post['node_id'];
+                        }
 
                         $linkdatas[] = $linkdata;
                         $success[] = [
@@ -286,8 +296,8 @@ class Link extends AdminController
                         ];
                     } catch (\Exception $e) {
                         $error[] = [
-                            'name'  =>  $vo[0],
-                            'url'   =>  $vo[1],
+                            'name'  =>  $vo['name'],
+                            'url'   =>  $vo['url'],
                             'reason'    =>  $e->getMessage(),
                         ];
                     }

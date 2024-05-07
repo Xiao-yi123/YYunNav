@@ -179,8 +179,6 @@ define(["jquery", "easy-admin"], function ($, ea) {
                             ExcelData = returndata.data.ExcelData;
                             ea.msg.success(returndata.msg);
                             ea.msg.close(load);
-
-
                         }else{
                             $("#app-form input[name='file_path']").attr('value',"");
                             ea.msg.error(returndata.msg);
@@ -199,7 +197,6 @@ define(["jquery", "easy-admin"], function ($, ea) {
                     ea.msg.error('请先上传文件！！！');
                     return false;
                 }
-                ExcelData.shift();
                 var node_id  = $("#app-form select[name='node_id']").val();
                 var formData =  {
                     'file' : ExcelData,

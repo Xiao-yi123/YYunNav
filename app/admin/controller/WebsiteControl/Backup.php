@@ -34,7 +34,7 @@ class Backup extends AdminController
                 $SFile = new FileService();
                 $currentPath = root_path();
 
-                $skipFolders = ['.git','.idea','backup','temp','upload','runtime','image','docs','vendor'];
+                $skipFolders = ['.git','.idea','backup','temp','upload','runtime','image','docs'];
                 $skipFiles = ['.env','install.lock',''];
                 $SFile->BackupFolder($file_name,$currentPath,$skipFolders,$skipFiles);
 
