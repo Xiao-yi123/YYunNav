@@ -41,7 +41,7 @@ GitHub地址：https://github.com/Xiao-yi123/YYunNav
 3. 如需修改头部菜单请修改 public/static/index/json/header_menu.json 文件
 4. 如需修改搜索的数据请修改 public/static/index/json/search_data.json 文件
 5. 如需修改侧边底部信息请修改 public/static/index/json/sidebar_top.json 文件
-6. 如需添加图标请在 public/static/index/wp-content/themes/onenav/css/my-iconfont.css 文件里面添加css定义 图标可在 https://igoutu.cn/ 里面找
+6. 如需添加图标请在 public/static/index/wp-content/themes/onenav/css/my-iconfont.css 文件里面添加css定义 图标可在 https://igoutu.cn/ 里面找 图标名需要以 .fa-开头
 7. 一言、和风天气的api建议大家自己注册换成自己的，每个注册的人有每日免费使用次数， 我的大家一起用可能最后都显示不出来了。
 8. 源码要感谢GitHub的webstack开源项目及一为导航，我是在它们的源码基础上本地静态化修改而来。
 

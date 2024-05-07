@@ -12,7 +12,7 @@ define(["jquery", "easy-admin","treetable","iconPickerFa"], function ($, ea) {
         delete_url: 'nav.node/delete',
         export_url: 'nav.node/export',
         modify_url: 'nav.node/modify',
-
+        icon_url:'nav.node/icon'
     };
 
     var Controller = {
@@ -93,6 +93,17 @@ define(["jquery", "easy-admin","treetable","iconPickerFa"], function ($, ea) {
             ea.listen();
         },
         add: function () {
+            iconPickerFa.render({
+                elem: '#icon',
+                url: ea.url(init.icon_url),
+                limit: 12,
+                click: function (data) {
+                    $('#icon').val('fa ' + data.icon);
+                },
+                success: function (d) {
+                    console.log(d);
+                }
+            });
             $('#app-form input[name="icon"]').on('input propertychange',function () {
                 input_val = $(this).val();
                 $('#app-form i[data-name="icon-show"]').attr("class","fa "+input_val);
@@ -100,10 +111,17 @@ define(["jquery", "easy-admin","treetable","iconPickerFa"], function ($, ea) {
             ea.listen();
         },
         edit: function () {
-            $('#app-form input[name="icon"]').on('input propertychange',function () {
-                input_val = $(this).val();
-                $('#app-form i[data-name="icon-show"]').attr("class","fa "+input_val);
-            })
+            iconPickerFa.render({
+                elem: '#icon',
+                url: ea.url(init.icon_url),
+                limit: 12,
+                click: function (data) {
+                    $('#icon').val('fa ' + data.icon);
+                },
+                success: function (d) {
+                    console.log(d);
+                }
+            });
             ea.listen();
         }
     };

@@ -1,12 +1,11 @@
-.icons8-填充的星 {
+.fa-填充的星 {
     display: inline-block;
     width: 20px;
     height: 20px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2ElEQVR4nO2Wu2tUQRTGr1GJLwQfiFhoKfhASxvRwkYLu/0HBLdYuLjz+2bc281WWoulViIEtBNsFAuxsU2hGO0sRLTQQmMgEmXMCssld7M7c3cXQg583Tnn9817smwzEqLdbp8MyqYVwH1J96YCl3QI+CVpyVp7eBoGupL+9NSdKDzP81lJn/sMfDHG7JyYAUnNPvg/WWuvT4q/BXhTNgC8897PjJ1ujLlShvfp8tgNAM8HGHhWK8wYs1/SqTAy4BpwS9LKAAMrISfkhppQG3qsC8rzfK+k25IeAi+B95IWB4BG1WLoGXoHRmAFZnlqr9YMrdIS0Kia8nOSvo4R/s05d37gckg6IenjGOCfjDFnhtp8zrkjwHyN8LedTudoNkoURbFP0qtUOPAaOJjF3vnA4wT4E+/9riwlvPfbJC1EGFgItVlqNBqNrcCPiNH/rMWAtfZs7BIMvetHfXqHVS1PNKv/vthTkP5fpOI+AJaBuz0tV+TMJ8El7V6rOfDCGHP6f55z7rikp2uY+N1qtfakGLhYavih8iFZ3bCXyr8lY8yFaAPAzd6IwzHseu93rFfTbDa3AzeA7z0TLtqApEfAg5h/f1EUB4A7wFyKgWPRxTX2yDZ0/AVMJTGpDVEIBwAAAABJRU5ErkJggg==') 50% 50% no-repeat;
     background-size: 100%;
 }
-
-.icons8-框架 {
+.fa-框架 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -14,7 +13,7 @@
     background-size: 100%;
 }
 
-.icons8-工具 {
+.fa-工具 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -22,7 +21,7 @@
     background-size: 100%;
 }
 
-.icons8-API接口 {
+.fa-API接口 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -30,7 +29,7 @@
     background-size: 100%;
 }
 
-.icons8-留言 {
+.fa-留言 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -38,7 +37,7 @@
     background-size: 100%;
 }
 
-.icons8-提交 {
+.fa-提交 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -46,7 +45,7 @@
     background-size: 100%;
 }
 
-.icons8-QQ{
+.fa-QQ{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -54,7 +53,7 @@
     background-size: 100%;
 }
 
-.icons8-消息{
+.fa-消息{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -62,7 +61,7 @@
     background-size: 100%;
 }
 
-.icons8-推荐 {
+.fa-推荐 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -70,7 +69,7 @@
     background-size: 100%;
 }
 
-.icons8-Telegram{
+.fa-Telegram{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -78,7 +77,7 @@
     background-size: 100%;
 }
 
-.icons8-WeChat{
+.fa-WeChat{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -86,7 +85,7 @@
     background-size: 100%;
 }
 
-.icons8-mail{
+.fa-mail{
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -94,7 +93,7 @@
     background-size: 100%;
 }
 
-.icons8-location{
+.fa-location{
     display: inline-block;
     width: 20px;
     height: 20px;

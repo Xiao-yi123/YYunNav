@@ -198,4 +198,22 @@ class Node extends AdminController
         }
         $save ? $this->success('删除成功',$save) : $this->error('删除失败,此节点下还有接口，请先处理相关接口再进行删除');
     }
+    /**
+     * @NodeAnotation(title="获取图标")
+     */
+    public function icon(){
+        $cssContent = file_get_contents(public_path('static/index/wp-content/themes/onenav/css').'my-iconfont.css');
+        // 使用正则表达式匹配所有以 "fa-var" 开头的类名
+        preg_match_all('/\.fa-([^\s,:{]+)/', $cssContent, $matches);
+
+        // $matches[1] 包含所有匹配的类名
+        $classNames = $matches[1];
+        $resule = [];
+        // 输出类名
+        foreach ($classNames as $className) {
+            $resule[] =  "fa-var-" . $className . ":'';";
+        }
+
+        halt($resule);
+    }
 }

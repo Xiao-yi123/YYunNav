@@ -64,7 +64,6 @@ layui.define(['laypage', 'form'], function (exports) {
                 if (success) {
                     success(this.successHandle());
                 }
-
                 return a;
             },
             successHandle: function () {
