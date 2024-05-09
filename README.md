@@ -17,6 +17,7 @@ git clone https://github.com/Xiao-yi123/YYunNav
 第二步，install 安装
 域名/install.php
 ```
+Tisp：下载请下载最近版本
 
 # 配置
 ## 公共目录
@@ -42,8 +43,9 @@ GitHub地址：https://github.com/Xiao-yi123/YYunNav
 4. 如需修改搜索的数据请修改 public/static/index/json/search_data.json 文件
 5. 如需修改侧边底部信息请修改 public/static/index/json/sidebar_top.json 文件
 6. 如需添加图标请在 public/static/index/wp-content/themes/onenav/css/my-iconfont.css 文件里面添加css定义 图标可在 https://igoutu.cn/ 里面找 图标名需要以 .fa-开头
-7. 一言、和风天气的api建议大家自己注册换成自己的，每个注册的人有每日免费使用次数， 我的大家一起用可能最后都显示不出来了。
-8. 源码要感谢GitHub的webstack开源项目及一为导航，我是在它们的源码基础上本地静态化修改而来。
+7. 如需替换QQ跟微信的图片，请替换 public/static/logo 路径下的 QQGuroup.jpg 和 wechat.jpg 文件
+8. 一言、和风天气的api建议大家自己注册换成自己的，每个注册的人有每日免费使用次数， 我的大家一起用可能最后都显示不出来了。
+9. 源码要感谢GitHub的webstack开源项目及一为导航，我是在它们的源码基础上本地静态化修改而来。
 
 ## 特别感谢
 
