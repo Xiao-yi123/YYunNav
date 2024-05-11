@@ -17,7 +17,7 @@ git clone https://github.com/Xiao-yi123/YYunNav
 第二步，install 安装
 域名/install.php
 ```
-Tisp：下载请下载最近版本
+注：下载请下载最近版本
 
 # 配置
 ## 公共目录
