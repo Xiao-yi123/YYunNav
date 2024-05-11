@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="__STATIC__/admin/css/icon-index.css">
+
+<div class="layui-bg-gray" id="icon-operate" style="padding: 16px;">
+    <div class="layui-row">
+        <div class="layui-card">
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">新增</li>
+                    <li>修改</li>
+                    <li>删除</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <form id="form-add" class="layui-form layuimini-form">
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">图标名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="icon-name" class="layui-input" lay-verify="required" placeholder="请输入图标名" value="">
+                                    <tip>填写图标名,后台会自动添加  <span style="color:red;">fa-</span>。</tip>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">图标数据</label>
+                                <div class="layui-input-block">
+                                    <textarea name="icon-data" class="layui-textarea"  placeholder="请输入图标数据"></textarea>
+                                    <blockquote class="layui-elem-quote" style="margin-top: 20px;">
+                                        请输入 Base64 数据 <br/>
+                                        图片转 Base64 链接：
+                                        <a href="https://www.bejson.com/ui/image2base64/" target="_blank">https://www.bejson.com/ui/image2base64/</a><br/>
+                                        图标获取链接：
+                                        <a href="https://igoutu.cn/" target="_blank">https://igoutu.cn/</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <div class="hr-line"></div>
+                            <div class="layui-form-item text-center">
+                                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="nav.icon/add">新增</button>
+                                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="layui-tab-item">
+                        <form id="form-revise" class="layui-form layuimini-form">
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">图标名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="icon-name" class="layui-input" lay-verify="required" placeholder="请输入图标名" value="">
+                                    <tip>不需要填<span style="color:red;">fa-</span>。</tip>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">图标数据</label>
+                                <div class="layui-input-block">
+                                    <textarea name="icon-data" class="layui-textarea"  placeholder="请输入图标数据"></textarea>
+                                    <blockquote class="layui-elem-quote" style="margin-top: 20px;">
+                                        请输入 Base64 数据 <br/>
+                                        图片转 Base64 链接：
+                                        <a href="https://www.bejson.com/ui/image2base64/" target="_blank">https://www.bejson.com/ui/image2base64/</a><br/>
+                                        图标获取链接：
+                                        <a href="https://igoutu.cn/" target="_blank">https://igoutu.cn/</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+                            <div class="hr-line"></div>
+                            <div class="layui-form-item text-center">
+                                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="nav.icon/revise">修改</button>
+                                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="layui-tab-item">
+                        <form id="form-del" class="layui-form layuimini-form">
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">图标名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="icon-name" class="layui-input" lay-verify="required" placeholder="请输入图标名" value="">
+                                    <tip>不需要填<span style="color:red;">fa-</span>。</tip>
+                                </div>
+                            </div>
+
+                            <div class="hr-line"></div>
+                            <div class="layui-form-item text-center">
+                                <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="nav.icon/del">删除</button>
+                                <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="layui-bg-gray" id="icon-display" style="padding: 16px;">
+    <div class="layui-row">
+        <div class="layui-card">
+            <div class="ws-docs-icon" id="ws-docs-icon">
+                {foreach $IconList as $Vo}
+                <div>
+                    <i class="layui-icon fa-{$Vo}"></i>
+                    <div class="docs-icon-name">{$Vo}</div>
+                    <div class="docs-icon-fontclass">fa-{$Vo}</div>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+
+    </div>
+</div>

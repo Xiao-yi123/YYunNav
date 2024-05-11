@@ -23,7 +23,9 @@ class Comment extends AdminController
         
         $this->assign('getStatusList', $this->model->getStatusList());
     }
-
+    /**
+     * @NodeAnotation(title="评论首页")
+     */
     public function index()
     {
         if ($this->request->isAjax()) {

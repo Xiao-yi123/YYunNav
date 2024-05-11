@@ -11,11 +11,18 @@ Apache 或 Nginx
 
 ## 通过git下载安装包
 ```gitexclude
-第一步，下载安装包
+第一步,下载安装包
 git clone https://github.com/Xiao-yi123/YYunNav
 
-第二步，install 安装
+第二步,install 安装
 域名/install.php
+
+第三步,更新节点 (可选)
+- 使用命令 php think node 进行更新权限节点
+- 或者在后台节点管理里面点击更新
+
+第四步,更新数据库 (可选)
+将 config/install/sql/update.sql 导入到数据库
 ```
 注：下载请下载最近版本
 
@@ -47,8 +54,10 @@ GitHub地址：https://github.com/Xiao-yi123/YYunNav
 8. 一言、和风天气的api建议大家自己注册换成自己的，每个注册的人有每日免费使用次数， 我的大家一起用可能最后都显示不出来了。
 9. 源码要感谢GitHub的webstack开源项目及一为导航，我是在它们的源码基础上本地静态化修改而来。
 
-## 特别感谢
+## 更新日志
+2024/05/11  后台新增图标管理功能
 
+## 特别感谢
 以下项目排名不分先后
 
 * ThinkPHP：[https://github.com/top-think/framework](https://github.com/top-think/framework)

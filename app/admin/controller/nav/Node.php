@@ -2,6 +2,7 @@
 
 namespace app\admin\controller\nav;
 
+use app\admin\service\define\IconService;
 use app\common\controller\AdminController;
 use think\App;
 
@@ -202,12 +203,9 @@ class Node extends AdminController
      * @NodeAnotation(title="获取图标")
      */
     public function icon(){
-        $cssContent = file_get_contents(public_path('static/index/wp-content/themes/onenav/css').'my-iconfont.css');
-        // 使用正则表达式匹配所有以 "fa-var" 开头的类名
-        preg_match_all('/\.fa-([^\s,:{]+)/', $cssContent, $matches);
+        $SIcon = new IconService();
 
-        // $matches[1] 包含所有匹配的类名
-        $classNames = $matches[1];
+        $classNames = $SIcon->getIconList();
         $resule = [];
         // 输出类名
         foreach ($classNames as $className) {
