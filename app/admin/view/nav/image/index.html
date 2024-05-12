@@ -1,0 +1,39 @@
+<div class="layuimini-container">
+    <div class="layuimini-main" id="image-app">
+        <blockquote class="layui-elem-quote">
+            图标管理
+        </blockquote>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form id="image-form" class="layui-form layuimini-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">QQ群图片</label>
+                        <div class="layui-input-block layuimini-upload">
+                            <input name="QQGroup" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传QQ群图片" value="__STATIC__/logo/QQGroup.jpg">
+                            <div class="layuimini-upload-btn">
+                                <span><a class="layui-btn" data-upload="QQGroup" data-upload-number="one" data-upload-exts="jpg|png"><i class="fa fa-upload"></i> 上传</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">站长微信</label>
+                        <div class="layui-input-block layuimini-upload">
+                            <input name="wechat" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上站长微信图片" value="__STATIC__/logo/wechat.jpg">
+                            <div class="layuimini-upload-btn">
+                                <span><a class="layui-btn" data-upload="wechat" data-upload-number="one" data-upload-exts="jpg|png"><i class="fa fa-upload"></i> 上传</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hr-line"></div>
+                    <div class="layui-form-item text-center">
+                        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="nav.image/save" data-refresh="false">确认</button>
+                        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
